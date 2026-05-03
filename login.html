@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchMind | Elite Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="archmind.css">
+</head>
+<body class="login-page">
+
+<div class="auth-card">
+    <div class="logo">ArchMind</div>
+    <h1 id="mainTitle">Sign in to your professional workspace</h1>
+
+    <!-- ── LOGIN ── -->
+    <div class="form-content active" id="loginSect">
+        <input type="email"    id="lEmail" placeholder="Email Address">
+        <input type="password" id="lPass"  placeholder="Password">
+        <button onclick="handleLogin()">Sign In</button>
+        <p class="link-text">Don't have an account? <span onclick="show('regSect')">Create Account</span></p>
+    </div>
+
+    <!-- ── REGISTER STEP 1 ── -->
+    <div class="form-content" id="regSect">
+        <input type="text"     id="rUser"  placeholder="Username (Unique ID)">
+        <input type="text"     id="rName"  placeholder="Full Name / Company Name">
+        <input type="email"    id="rEmail" placeholder="Business Email">
+        <input type="password" id="rPass"  placeholder="Password (8+ characters)">
+        <select id="rRole">
+            <option value="" disabled selected>Registering as…</option>
+            <option value="customer">Client (Hiring)</option>
+            <option value="designer">Architect / Interior Designer</option>
+            <option value="maintenance">Maintenance Expert</option>
+        </select>
+        <button onclick="nextStep()">Continue to Profile →</button>
+        <p class="link-text">Already a member? <span onclick="show('loginSect')">Login</span></p>
+    </div>
+
+    <!-- ── REGISTER STEP 2 (dynamic, filled by archmind.js) ── -->
+    <div class="form-content" id="detailSect">
+        <div id="dynamicInputs" class="grid">
+            <!-- archmind.js injects role-specific fields + payment section here -->
+        </div>
+        <button onclick="finalizeRegister()">Finalize Registration</button>
+        <p class="link-text"><span onclick="show('regSect')">← Back to Step 1</span></p>
+    </div>
+</div>
+
+<script src="archmind.js"></script>
+</body>
+</html>

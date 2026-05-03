@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ARCHMIND</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+      --p:        rgb(198,167,228);
+      --p-dim:    rgba(198,167,228,0.12);
+      --p-border: rgba(198,167,228,0.3);
+      --bg:       #080808;
+      --text:     #f0f0f0;
+      --muted:    rgba(255,255,255,0.45);
+      --border:   rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE ── */
+    body::before {
+      content: "";
+      position: fixed; inset: 0; z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; opacity: 0.5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 52px;
+      background: rgba(8,8,8,0.85);
+      backdrop-filter: blur(24px);
+      border-bottom: 0.5px solid var(--border);
+      transition: padding 0.3s;
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; letter-spacing: 6px;
+      color: var(--p); text-decoration: none;
+      font-weight: 400;
+    }
+
+    nav ul { display: flex; gap: 6px; list-style: none; align-items: center; }
+
+    nav a {
+      color: var(--muted); text-decoration: none;
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 6px;
+      border: 0.5px solid transparent;
+      transition: all 0.25s;
+    }
+    nav a:hover { color: var(--text); border-color: var(--border); }
+    nav a.cta {
+      background: var(--p-dim); border-color: var(--p-border);
+      color: var(--p);
+    }
+    nav a.cta:hover { background: rgba(198,167,228,0.22); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; height: 100vh; min-height: 700px;
+      display: flex; align-items: flex-end;
+      padding: 0 52px 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80') center/cover no-repeat;
+      transform: scale(1.05);
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.12); }
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(8,8,8,0.95) 0%,
+        rgba(8,8,8,0.55) 45%,
+        rgba(8,8,8,0.2)  100%
+      );
+    }
+
+   
+    .hero-orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(120px); pointer-events: none;
+    }
+    .hero-orb-1 {
+      width: 600px; height: 600px;
+      background: rgba(198,167,228,0.12);
+      top: -100px; right: -100px;
+      animation: orbFloat 12s ease-in-out infinite alternate;
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      background: rgba(120,80,180,0.1);
+      bottom: 100px; left: 10%;
+      animation: orbFloat 16s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes orbFloat {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(30px,20px) scale(1.1); }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--p); margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-eyebrow::before {
+      content: ""; width: 32px; height: 0.5px; background: var(--p);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 110px);
+      font-weight: 300; line-height: 0.95;
+      letter-spacing: -2px;
+      opacity: 0; animation: fadeUp 0.9s 0.35s forwards;
+    }
+    .hero-title em {
+      font-style: italic; color: var(--p);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 14px; color: var(--muted); line-height: 1.8;
+      max-width: 420px; margin-top: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.55s forwards;
+    }
+
+    .hero-actions {
+      display: flex; gap: 14px; margin-top: 40px;
+      opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 8px;
+      background: var(--p); color: #0a0a0a;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      font-weight: 600; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-hero-primary:hover { background: #e0c8f5; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(198,167,228,0.35); }
+
+    .btn-hero-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 8px;
+      background: transparent; color: var(--text);
+      border: 0.5px solid rgba(255,255,255,0.2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      text-decoration: none; transition: all 0.3s;
+    }
+    .btn-hero-secondary:hover { border-color: var(--p-border); color: var(--p); transform: translateY(-2px); }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0; animation: fadeUp 1s 1.2s forwards;
+      z-index: 1;
+    }
+    .hero-scroll span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+    .scroll-line {
+      width: 0.5px; height: 48px; background: linear-gradient(to bottom, var(--p), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.4; transform: scaleY(1); }
+      50%      { opacity: 1;   transform: scaleY(1.2); }
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(12,12,12,0.9);
+      backdrop-filter: blur(20px);
+    }
+    .stat-item {
+      padding: 32px 40px;
+      border-right: 0.5px solid var(--border);
+      transition: background 0.3s;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: var(--p-dim); }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; font-weight: 300; color: var(--p);
+      line-height: 1;
+    }
+    .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+    /* ── SERVICES ── */
+    .services {
+      position: relative; z-index: 1;
+      padding: 120px 52px;
+    }
+
+    .section-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 64px;
+    }
+    .section-eyebrow {
+      font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--p); display: flex; align-items: center; gap: 10px;
+      margin-bottom: 12px;
+    }
+    .section-eyebrow::before { content: ""; width: 24px; height: 0.5px; background: var(--p); }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 56px); font-weight: 300;
+      line-height: 1.05; letter-spacing: -1px;
+    }
+    .section-sub { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+
+    /* Service cards grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      position: relative; height: 480px;
+      border-radius: 16px; overflow: hidden;
+      cursor: pointer; text-decoration: none; color: var(--text);
+      border: 0.5px solid var(--border);
+      transition: transform 0.4s cubic-bezier(.22,1,.36,1), border-color 0.3s, box-shadow 0.4s;
+      group: true;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--p-border);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 0.5px var(--p-border);
+    }
+
+    .service-card-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transition: transform 0.7s cubic-bezier(.22,1,.36,1);
+    }
+    .service-card:hover .service-card-bg { transform: scale(1.08); }
+
+    /* Multi-layer gradient for depth */
+    .service-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(8,8,8,0.96) 0%,
+        rgba(8,8,8,0.5)  40%,
+        rgba(8,8,8,0.1)  100%
+      );
+      transition: background 0.4s;
+    }
+    .service-card:hover .service-card-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(8,8,8,0.98) 0%,
+        rgba(8,8,8,0.65) 50%,
+        rgba(8,8,8,0.2)  100%
+      );
+    }
+
+    /* Glow ring on hover */
+    .service-card::before {
+      content: "";
+      position: absolute; inset: 0; z-index: 2;
+      border-radius: 16px;
+      background: radial-gradient(ellipse at 50% 100%, rgba(198,167,228,0.12) 0%, transparent 70%);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-card-content {
+      position: absolute; inset: 0; z-index: 3;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 32px 28px;
+    }
+
+    .service-number {
+      font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--p); margin-bottom: 12px;
+      opacity: 0.7;
+    }
+
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 300; line-height: 1.1;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .service-card:hover .service-title { color: var(--p); }
+
+    .service-desc {
+      font-size: 12px; color: var(--muted); line-height: 1.7;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s;
+      opacity: 0;
+    }
+    .service-card:hover .service-desc { max-height: 80px; opacity: 1; }
+
+    .service-arrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--p); margin-top: 16px;
+      opacity: 0; transform: translateX(-8px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .service-card:hover .service-arrow { opacity: 1; transform: translateX(0); }
+    .service-arrow svg { width: 14px; height: 14px; stroke: var(--p); stroke-width: 2; fill: none; }
+
+    /* ── WHY US ── */
+    .why {
+      position: relative; z-index: 1;
+      padding: 100px 52px;
+      border-top: 0.5px solid var(--border);
+    }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+      margin-top: 64px;
+      border: 0.5px solid var(--border); border-radius: 16px; overflow: hidden;
+    }
+    .why-item {
+      padding: 48px 40px;
+      border-right: 0.5px solid var(--border);
+      transition: background 0.3s;
+    }
+    .why-item:last-child { border-right: none; }
+    .why-item:hover { background: var(--p-dim); }
+    .why-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--p-dim); border: 0.5px solid var(--p-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 20px;
+    }
+    .why-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 400; margin-bottom: 10px;
+    }
+    .why-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 1;
+      padding: 48px 52px;
+      border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; letter-spacing: 5px; color: var(--p);
+    }
+    .footer-copy { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--p); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll-reveal */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+      .stats-bar .stat-item:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .hero { padding: 0 24px 60px; }
+      .services, .why { padding: 80px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { height: 320px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">ArchMind</a>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="login.html" class="cta">Login</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">Architecture &amp; Design Studio</span>
+    <h1 class="hero-title">
+      Spaces That<em>Speak.</em>
+    </h1>
+    <p class="hero-sub">
+      From concept to completion — curated design, intelligent planning, and timeless interiors crafted for the way you live.
+    </p>
+    <div class="hero-actions">
+      <a href="login.html" class="btn-hero-primary">
+        Get Started
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#services" class="btn-hero-secondary">Explore Services</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">500+</div>
+    <div class="stat-label">Projects Delivered</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">12+</div>
+    <div class="stat-label">Years of Excellence</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">98%</div>
+    <div class="stat-label">Client Satisfaction</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Core Services</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">Our Services</h2>
+    </div>
+    <span class="section-sub">Precision at every scale</span>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- Design -->
+    <a href="design.html" class="service-card reveal">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-number">01</span>
+        <h3 class="service-title">Design</h3>
+        <p class="service-desc">From concept to blueprint — every space crafted with precision and purpose.</p>
+        <span class="service-arrow">
+          Explore
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- Planning -->
+    <a href="planning.html" class="service-card reveal" style="transition-delay:0.1s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-number">02</span>
+        <h3 class="service-title">Planning</h3>
+        <p class="service-desc">Smart spatial strategy — turning vision into viable, buildable reality.</p>
+        <span class="service-arrow">
+          Explore
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- Interior -->
+    <a href="interior.html" class="service-card reveal" style="transition-delay:0.2s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-number">03</span>
+        <h3 class="service-title">Interior</h3>
+        <p class="service-desc">Timeless interiors — materials, light, and texture in perfect harmony.</p>
+        <span class="service-arrow">
+          Explore
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- Maintenance -->
+    <a href="request.html" class="service-card reveal" style="transition-delay:0.3s">
+      <div class="service-card-bg" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80')"></div>
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-number">04</span>
+        <h3 class="service-title">Maintenance</h3>
+        <p class="service-desc">Expert upkeep — keeping your spaces in peak condition, always.</p>
+        <span class="service-arrow">
+          Request
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="why">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">Why ArchMind</div>
+      <h2 class="section-title">Built on Trust,<br>Driven by Vision</h2>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <div class="why-icon">✦</div>
+      <h3 class="why-title">Curated Expertise</h3>
+      <p class="why-desc">Every architect and designer on our platform is vetted for quality, creativity, and professionalism.</p>
+    </div>
+    <div class="why-item reveal" style="transition-delay:0.1s">
+      <div class="why-icon">◈</div>
+      <h3 class="why-title">End-to-End Service</h3>
+      <p class="why-desc">From initial concept through construction and maintenance — one platform for the entire lifecycle.</p>
+    </div>
+    <div class="why-item reveal" style="transition-delay:0.2s">
+      <div class="why-icon">⬡</div>
+      <h3 class="why-title">Transparent Process</h3>
+      <p class="why-desc">Clear budgets, direct communication, and full visibility at every stage of your project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">ArchMind</span>
+  <div class="footer-links">
+    <a href="design.html">Design</a>
+    <a href="planning.html">Planning</a>
+    <a href="interior.html">Interior</a>
+    <a href="request.html">Maintenance</a>
+    <a href="login.html">Login</a>
+  </div>
+  <span class="footer-copy">&#169; 2026 ArchMind Studio</span>
+</footer>
+
+<script src="archmind.js"></script>
+<script>
+  // Scroll-reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

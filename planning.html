@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dream Home Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="archmind.css">
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">ArchMind</a>
+  <a href="Archmind.html" class="nav-link">Home</a>
+  <a href="login.html" class="nav-link">Login</a>
+  <div class="nav-right">
+    <a href="#archive" class="nav-link">♡ Saved</a>
+    <select class="nav-select" onchange="location=this.value;">
+      <option value="#home">Size</option>
+      <option value="#small">Small</option>
+      <option value="#medium">Medium</option>
+      <option value="#large">Large</option>
+    </select>
+    <select class="nav-select" onchange="location=this.value;">
+      <option value="#home">Style</option>
+      <option value="#small-modern">Small Modern</option>
+      <option value="#small-mediterranean">Small Mediterranean</option>
+      <option value="#small-sustainable">Small Sustainable</option>
+      <option value="#med-modern">Medium Modern</option>
+      <option value="#med-mediterranean">Medium Mediterranean</option>
+      <option value="#med-sustainable">Medium Sustainable</option>
+      <option value="#large-modern">Large Modern</option>
+      <option value="#large-mediterranean">Large Mediterranean</option>
+      <option value="#large-sustainable">Large Sustainable</option>
+    </select>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="panel">
+  <span class="page-eyebrow">Dream Home Planner</span>
+  <h1 class="page-title">Plan Your Dream Home.</h1>
+  <p class="page-sub">Choose your home size, style, and story count to explore curated architectural designs.</p>
+  <div class="home-grid">
+    <a href="#small"  class="home-card small-home">  <div class="overlay"><span class="overlay-eye">Size 01</span>Small</div></a>
+    <a href="#medium" class="home-card medium-home"> <div class="overlay"><span class="overlay-eye">Size 02</span>Medium</div></a>
+    <a href="#large"  class="home-card large-home">  <div class="overlay"><span class="overlay-eye">Size 03</span>Large</div></a>
+  </div>
+</section>
+
+<!-- SMALL -->
+<section id="small" class="panel">
+  <span class="page-eyebrow">Size 01</span>
+  <h2 class="page-title">Small Home.</h2>
+  <div class="style-btns">
+    <a href="#small-modern" class="btn-style">Modern</a>
+    <a href="#small-mediterranean" class="btn-style">Mediterranean</a>
+    <a href="#small-sustainable" class="btn-style">Sustainable</a>
+  </div>
+  <a href="#home" class="back-btn">← Back</a>
+</section>
+
+<section id="small-modern" class="panel">
+  <span class="page-eyebrow">Small — Modern</span>
+  <h2 class="page-title">Small Modern.</h2>
+  <div class="style-btns">
+    <a href="#modern-1" class="btn-style">1 Story</a>
+    <a href="#modern-2" class="btn-style">2 Story</a>
+  </div>
+  <a href="#small" class="back-btn">← Back</a>
+</section>
+
+<section id="small-mediterranean" class="panel">
+  <span class="page-eyebrow">Small — Mediterranean</span>
+  <h2 class="page-title">Small Mediterranean.</h2>
+  <div class="style-btns">
+    <a href="#med-1" class="btn-style">1 Story</a>
+    <a href="#med-2" class="btn-style">2 Story</a>
+  </div>
+  <a href="#small" class="back-btn">← Back</a>
+</section>
+
+<section id="small-sustainable" class="panel">
+  <span class="page-eyebrow">Small — Sustainable</span>
+  <h2 class="page-title">Small Sustainable.</h2>
+  <div class="style-btns">
+    <a href="#sustain-1" class="btn-style">1 Story</a>
+    <a href="#sustain-2" class="btn-style">2 Story</a>
+  </div>
+  <a href="#small" class="back-btn">← Back</a>
+</section>
+
+<section id="modern-1" class="panel">
+  <span class="page-eyebrow">Small Modern — 1 Story</span>
+  <h2 class="page-title">Small Modern 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-modern-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MOD1-001',img:'https://i.ibb.co/XfYC7jxj/Gemini-Generated-Image-thexuxthexuxthex.png',title:'Compact Modern Ranch',desc:'Single-storey modern home with clean lines, flat roof, and open-plan living on a compact lot.',budget:'Rs 35,00,000 - 55,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'modern-1'})">
+      <img src="https://i.ibb.co/XfYC7jxj/Gemini-Generated-Image-thexuxthexuxthex.png" alt="Compact Modern Ranch" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MOD1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MOD1-001',img:'https://i.ibb.co/XfYC7jxj/Gemini-Generated-Image-thexuxthexuxthex.png',title:'Compact Modern Ranch',desc:'Single-storey modern home with clean lines, flat roof, and open-plan living on a compact lot.',budget:'Rs 35,00,000 - 55,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'modern-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Compact Modern Ranch</div>
+      <div class="card-desc">Single-storey modern home with clean lines, flat roof, and open-plan living on a compact lot.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 35,00,000 - 55,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MOD1-002',img:'https://i.ibb.co/kVS5RxW7/Gemini-Generated-Image-x5o4mxx5o4mxx5o4.png',title:'Glass and Steel Bungalow',desc:'Floor-to-ceiling glazing floods this single-storey home with natural light and garden views.',budget:'Rs 45,00,000 - 70,00,000',designer:'Priya Nair',designerUrl:'#',category:'modern-1'})">
+      <img src="https://i.ibb.co/kVS5RxW7/Gemini-Generated-Image-x5o4mxx5o4mxx5o4.png" alt="Glass and Steel Bungalow" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MOD1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MOD1-002',img:'https://i.ibb.co/kVS5RxW7/Gemini-Generated-Image-x5o4mxx5o4mxx5o4.png',title:'Glass and Steel Bungalow',desc:'Floor-to-ceiling glazing floods this single-storey home with natural light and garden views.',budget:'Rs 45,00,000 - 70,00,000',designer:'Priya Nair',designerUrl:'#',category:'modern-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Glass and Steel Bungalow</div>
+      <div class="card-desc">Floor-to-ceiling glazing floods this single-storey home with natural light and garden views.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 45,00,000 - 70,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#small-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="modern-2" class="panel">
+  <span class="page-eyebrow">Small Modern — 2 Story</span>
+  <h2 class="page-title">Small Modern 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-modern-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MOD2-001',img:'https://i.ibb.co/FLtQ625f/Gemini-Generated-Image-9ecddv9ecddv9ecd.png',title:'Vertical Modern Villa',desc:'Two-storey small modern home maximising vertical space with a rooftop terrace.',budget:'Rs 50,00,000 - 80,00,000',designer:'Riya Sharma',designerUrl:'#',category:'modern-2'})">
+      <img src="https://i.ibb.co/FLtQ625f/Gemini-Generated-Image-9ecddv9ecddv9ecd.png" alt="Vertical Modern Villa" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MOD2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MOD2-001',img:'https://i.ibb.co/FLtQ625f/Gemini-Generated-Image-9ecddv9ecddv9ecd.png',title:'Vertical Modern Villa',desc:'Two-storey small modern home maximising vertical space with a rooftop terrace.',budget:'Rs 50,00,000 - 80,00,000',designer:'Riya Sharma',designerUrl:'#',category:'modern-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Vertical Modern Villa</div>
+      <div class="card-desc">Two-storey small modern home maximising vertical space with a rooftop terrace.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 50,00,000 - 80,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MOD2-002',img:'https://i.ibb.co/Z6WWBzJ8/Gemini-Generated-Image-uxjea4uxjea4uxje.png',title:'Split-Level Residence',desc:'Clever split-level design creates distinct zones across two floors without sacrificing openness.',budget:'Rs 55,00,000 - 85,00,000',designer:'Karan Verma',designerUrl:'#',category:'modern-2'})">
+      <img src="https://i.ibb.co/Z6WWBzJ8/Gemini-Generated-Image-uxjea4uxjea4uxje.png" alt="Split-Level Residence" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MOD2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MOD2-002',img:'https://i.ibb.co/Z6WWBzJ8/Gemini-Generated-Image-uxjea4uxjea4uxje.png',title:'Split-Level Residence',desc:'Clever split-level design creates distinct zones across two floors without sacrificing openness.',budget:'Rs 55,00,000 - 85,00,000',designer:'Karan Verma',designerUrl:'#',category:'modern-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Split-Level Residence</div>
+      <div class="card-desc">Clever split-level design creates distinct zones across two floors without sacrificing openness.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 55,00,000 - 85,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#small-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="med-1" class="panel">
+  <span class="page-eyebrow">Small Mediterranean — 1 Story</span>
+  <h2 class="page-title">Small Mediterranean 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MED1-001',img:'https://i.ibb.co/MxCsxpgw/Gemini-Generated-Image-6c0bt06c0bt06c0b.png',title:'Terracotta Courtyard',desc:'Single-storey Mediterranean home with a central courtyard, terracotta tiles, and arched doorways.',budget:'Rs 40,00,000 - 65,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-1'})">
+      <img src="https://i.ibb.co/MxCsxpgw/Gemini-Generated-Image-6c0bt06c0bt06c0b.png" alt="Terracotta Courtyard" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MED1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MED1-001',img:'https://i.ibb.co/MxCsxpgw/Gemini-Generated-Image-6c0bt06c0bt06c0b.png',title:'Terracotta Courtyard',desc:'Single-storey Mediterranean home with a central courtyard, terracotta tiles, and arched doorways.',budget:'Rs 40,00,000 - 65,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Terracotta Courtyard</div>
+      <div class="card-desc">Single-storey Mediterranean home with a central courtyard, terracotta tiles, and arched doorways.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 40,00,000 - 65,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MED1-002',img:'https://i.ibb.co/PZc6C5Hy/Gemini-Generated-Image-w058p8w058p8w058.png',title:'Whitewashed Retreat',desc:'Whitewashed walls and blue shutters evoke the Aegean in this compact Mediterranean bungalow.',budget:'Rs 38,00,000 - 60,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-1'})">
+      <img src="https://i.ibb.co/PZc6C5Hy/Gemini-Generated-Image-w058p8w058p8w058.png" alt="Whitewashed Retreat" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MED1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MED1-002',img:'https://i.ibb.co/PZc6C5Hy/Gemini-Generated-Image-w058p8w058p8w058.png',title:'Whitewashed Retreat',desc:'Whitewashed walls and blue shutters evoke the Aegean in this compact Mediterranean bungalow.',budget:'Rs 38,00,000 - 60,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Whitewashed Retreat</div>
+      <div class="card-desc">Whitewashed walls and blue shutters evoke the Aegean in this compact Mediterranean bungalow.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 38,00,000 - 60,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#small-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="med-2" class="panel">
+  <span class="page-eyebrow">Small Mediterranean — 2 Story</span>
+  <h2 class="page-title">Small Mediterranean 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MED2-001',img:'https://i.ibb.co/TBZ5NLMp/Gemini-Generated-Image-eyxic7eyxic7eyxi.png',title:'Tuscan Two-Storey',desc:'Two-storey Mediterranean villa with a loggia, clay roof tiles, and lush garden terracing.',budget:'Rs 60,00,000 - 95,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-2'})">
+      <img src="https://i.ibb.co/TBZ5NLMp/Gemini-Generated-Image-eyxic7eyxic7eyxi.png" alt="Tuscan Two-Storey" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MED2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MED2-001',img:'https://i.ibb.co/TBZ5NLMp/Gemini-Generated-Image-eyxic7eyxic7eyxi.png',title:'Tuscan Two-Storey',desc:'Two-storey Mediterranean villa with a loggia, clay roof tiles, and lush garden terracing.',budget:'Rs 60,00,000 - 95,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Tuscan Two-Storey</div>
+      <div class="card-desc">Two-storey Mediterranean villa with a loggia, clay roof tiles, and lush garden terracing.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 60,00,000 - 95,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-MED2-002',img:'https://i.ibb.co/SXVhk9xf/Gemini-Generated-Image-khp46bkhp46bkhp4.png',title:'Coastal Mediterranean',desc:'Breezy two-storey home with sea-facing balconies, stone cladding, and a rooftop pergola.',budget:'Rs 65,00,000 - 1,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-2'})">
+      <img src="https://i.ibb.co/SXVhk9xf/Gemini-Generated-Image-khp46bkhp46bkhp4.png" alt="Coastal Mediterranean" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-MED2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-MED2-002',img:'https://i.ibb.co/SXVhk9xf/Gemini-Generated-Image-khp46bkhp46bkhp4.png',title:'Coastal Mediterranean',desc:'Breezy two-storey home with sea-facing balconies, stone cladding, and a rooftop pergola.',budget:'Rs 65,00,000 - 1,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Coastal Mediterranean</div>
+      <div class="card-desc">Breezy two-storey home with sea-facing balconies, stone cladding, and a rooftop pergola.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 65,00,000 - 1,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#small-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="sustain-1" class="panel">
+  <span class="page-eyebrow">Small Sustainable — 1 Story</span>
+  <h2 class="page-title">Small Sustainable 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-sustain-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-SUS1-001',img:'https://i.ibb.co/GQFwkjYF/Gemini-Generated-Image-p4pou9p4pou9p4po.png',title:'Passive Solar Cottage',desc:'Single-storey sustainable home oriented for passive solar gain with green roof and rainwater harvesting.',budget:'Rs 30,00,000 - 50,00,000',designer:'Riya Sharma',designerUrl:'#',category:'sustain-1'})">
+      <img src="https://i.ibb.co/GQFwkjYF/Gemini-Generated-Image-p4pou9p4pou9p4po.png" alt="Passive Solar Cottage" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-SUS1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-SUS1-001',img:'https://i.ibb.co/GQFwkjYF/Gemini-Generated-Image-p4pou9p4pou9p4po.png',title:'Passive Solar Cottage',desc:'Single-storey sustainable home oriented for passive solar gain with green roof and rainwater harvesting.',budget:'Rs 30,00,000 - 50,00,000',designer:'Riya Sharma',designerUrl:'#',category:'sustain-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Passive Solar Cottage</div>
+      <div class="card-desc">Single-storey sustainable home oriented for passive solar gain with green roof and rainwater harvesting.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 30,00,000 - 50,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-SUS1-002',img:'https://i.ibb.co/pr3hzgcp/Gemini-Generated-Image-o4h65so4h65so4h6.png',title:'Earthship Bungalow',desc:'Rammed earth walls and solar panels make this single-storey home nearly off-grid.',budget:'Rs 28,00,000 - 48,00,000',designer:'Anika Singh',designerUrl:'#',category:'sustain-1'})">
+      <img src="https://i.ibb.co/pr3hzgcp/Gemini-Generated-Image-o4h65so4h65so4h6.png" alt="Earthship Bungalow" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-SUS1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-SUS1-002',img:'https://i.ibb.co/pr3hzgcp/Gemini-Generated-Image-o4h65so4h65so4h6.png',title:'Earthship Bungalow',desc:'Rammed earth walls and solar panels make this single-storey home nearly off-grid.',budget:'Rs 28,00,000 - 48,00,000',designer:'Anika Singh',designerUrl:'#',category:'sustain-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Earthship Bungalow</div>
+      <div class="card-desc">Rammed earth walls and solar panels make this single-storey home nearly off-grid.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 28,00,000 - 48,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#small-sustainable" class="back-btn">← Back</a>
+</section>
+
+<section id="sustain-2" class="panel">
+  <span class="page-eyebrow">Small Sustainable — 2 Story</span>
+  <h2 class="page-title">Small Sustainable 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-sustain-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-SUS2-001',img:'https://i.ibb.co/chdMdwzK/Gemini-Generated-Image-hb8c2mhb8c2mhb8c.png',title:'Green Stack House',desc:'Two-storey sustainable home with living walls, solar roof, and cross-ventilation design.',budget:'Rs 48,00,000 - 75,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'sustain-2'})">
+      <img src="https://i.ibb.co/chdMdwzK/Gemini-Generated-Image-hb8c2mhb8c2mhb8c.png" alt="Green Stack House" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-SUS2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-SUS2-001',img:'https://i.ibb.co/chdMdwzK/Gemini-Generated-Image-hb8c2mhb8c2mhb8c.png',title:'Green Stack House',desc:'Two-storey sustainable home with living walls, solar roof, and cross-ventilation design.',budget:'Rs 48,00,000 - 75,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'sustain-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Green Stack House</div>
+      <div class="card-desc">Two-storey sustainable home with living walls, solar roof, and cross-ventilation design.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 48,00,000 - 75,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'SM-SUS2-002',img:'https://i.ibb.co/xtzLCHj7/Gemini-Generated-Image-5mf30i5mf30i5mf3.png',title:'Timber Frame Eco Home',desc:'Sustainably sourced timber frame with triple-glazed windows and a ground-source heat pump.',budget:'Rs 52,00,000 - 80,00,000',designer:'Priya Nair',designerUrl:'#',category:'sustain-2'})">
+      <img src="https://i.ibb.co/xtzLCHj7/Gemini-Generated-Image-5mf30i5mf30i5mf3.png" alt="Timber Frame Eco Home" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="SM-SUS2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'SM-SUS2-002',img:'https://i.ibb.co/xtzLCHj7/Gemini-Generated-Image-5mf30i5mf30i5mf3.png',title:'Timber Frame Eco Home',desc:'Sustainably sourced timber frame with triple-glazed windows and a ground-source heat pump.',budget:'Rs 52,00,000 - 80,00,000',designer:'Priya Nair',designerUrl:'#',category:'sustain-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Timber Frame Eco Home</div>
+      <div class="card-desc">Sustainably sourced timber frame with triple-glazed windows and a ground-source heat pump.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 52,00,000 - 80,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#small-sustainable" class="back-btn">← Back</a>
+</section>
+
+<!-- MEDIUM -->
+<section id="medium" class="panel">
+  <span class="page-eyebrow">Size 02</span>
+  <h2 class="page-title">Medium Home.</h2>
+  <div class="style-btns">
+    <a href="#med-modern" class="btn-style">Modern</a>
+    <a href="#med-mediterranean" class="btn-style">Mediterranean</a>
+    <a href="#med-sustainable" class="btn-style">Sustainable</a>
+  </div>
+  <a href="#home" class="back-btn">← Back</a>
+</section>
+
+<section id="med-modern" class="panel">
+  <span class="page-eyebrow">Medium — Modern</span>
+  <h2 class="page-title">Medium Modern.</h2>
+  <div class="style-btns">
+    <a href="#med-mod-1" class="btn-style">1 Story</a>
+    <a href="#med-mod-2" class="btn-style">2 Story</a>
+    <a href="#med-mod-3" class="btn-style">3 Story</a>
+  </div>
+  <a href="#medium" class="back-btn">← Back</a>
+</section>
+
+<section id="med-mediterranean" class="panel">
+  <span class="page-eyebrow">Medium — Mediterranean</span>
+  <h2 class="page-title">Medium Mediterranean.</h2>
+  <div class="style-btns">
+    <a href="#med-medi-1" class="btn-style">1 Story</a>
+    <a href="#med-medi-2" class="btn-style">2 Story</a>
+    <a href="#med-medi-3" class="btn-style">3 Story</a>
+  </div>
+  <a href="#medium" class="back-btn">← Back</a>
+</section>
+
+<section id="med-sustainable" class="panel">
+  <span class="page-eyebrow">Medium — Sustainable</span>
+  <h2 class="page-title">Medium Sustainable.</h2>
+  <div class="style-btns">
+    <a href="#med-sus-1" class="btn-style">1 Story</a>
+    <a href="#med-sus-2" class="btn-style">2 Story</a>
+    <a href="#med-sus-3" class="btn-style">3 Story</a>
+  </div>
+  <a href="#medium" class="back-btn">← Back</a>
+</section>
+
+<section id="med-mod-1" class="panel">
+  <span class="page-eyebrow">Medium Modern — 1 Story</span>
+  <h2 class="page-title">Medium Modern 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-mod-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MOD1-001',img:'https://i.ibb.co/kV1N4MJh/Gemini-Generated-Image-20gbb20gbb20gbb2.png',title:'Prairie Modern',desc:'Wide single-storey medium home with horizontal emphasis, overhanging eaves, and natural stone.',budget:'Rs 80,00,000 - 1,20,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-mod-1'})">
+      <img src="https://i.ibb.co/kV1N4MJh/Gemini-Generated-Image-20gbb20gbb20gbb2.png" alt="Prairie Modern" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MOD1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MOD1-001',img:'https://i.ibb.co/kV1N4MJh/Gemini-Generated-Image-20gbb20gbb20gbb2.png',title:'Prairie Modern',desc:'Wide single-storey medium home with horizontal emphasis, overhanging eaves, and natural stone.',budget:'Rs 80,00,000 - 1,20,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-mod-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Prairie Modern</div>
+      <div class="card-desc">Wide single-storey medium home with horizontal emphasis, overhanging eaves, and natural stone.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 80,00,000 - 1,20,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MOD1-002',img:'https://i.ibb.co/WNW1Y24d/Gemini-Generated-Image-n0dxe8n0dxe8n0dx.png',title:'Courtyard Pavilion',desc:'Single-storey medium home arranged around a central courtyard with seamless indoor-outdoor flow.',budget:'Rs 90,00,000 - 1,40,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-mod-1'})">
+      <img src="https://i.ibb.co/WNW1Y24d/Gemini-Generated-Image-n0dxe8n0dxe8n0dx.png" alt="Courtyard Pavilion" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MOD1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MOD1-002',img:'https://i.ibb.co/WNW1Y24d/Gemini-Generated-Image-n0dxe8n0dxe8n0dx.png',title:'Courtyard Pavilion',desc:'Single-storey medium home arranged around a central courtyard with seamless indoor-outdoor flow.',budget:'Rs 90,00,000 - 1,40,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-mod-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Courtyard Pavilion</div>
+      <div class="card-desc">Single-storey medium home arranged around a central courtyard with seamless indoor-outdoor flow.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 90,00,000 - 1,40,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="med-mod-2" class="panel">
+  <span class="page-eyebrow">Medium Modern — 2 Story</span>
+  <h2 class="page-title">Medium Modern 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-mod-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MOD2-001',img:'https://i.ibb.co/Dfh47Mb1/Gemini-Generated-Image-uxtcguxtcguxtcgu.png',title:'Urban Villa',desc:'Two-storey medium modern home with a rooftop pool, double-height living room, and smart home integration.',budget:'Rs 1,20,00,000 - 1,80,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-mod-2'})">
+      <img src="https://i.ibb.co/Dfh47Mb1/Gemini-Generated-Image-uxtcguxtcguxtcgu.png" alt="Urban Villa" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MOD2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MOD2-001',img:'https://i.ibb.co/Dfh47Mb1/Gemini-Generated-Image-uxtcguxtcguxtcgu.png',title:'Urban Villa',desc:'Two-storey medium modern home with a rooftop pool, double-height living room, and smart home integration.',budget:'Rs 1,20,00,000 - 1,80,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-mod-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Urban Villa</div>
+      <div class="card-desc">Two-storey medium modern home with a rooftop pool, double-height living room, and smart home integration.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,20,00,000 - 1,80,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MOD2-002',img:'https://i.ibb.co/Nnskqmcd/Gemini-Generated-Image-t8delht8delht8de.png',title:'Cantilevered Residence',desc:'Bold cantilevered upper floor creates a dramatic silhouette and shaded outdoor terrace below.',budget:'Rs 1,30,00,000 - 2,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-mod-2'})">
+      <img src="https://i.ibb.co/Nnskqmcd/Gemini-Generated-Image-t8delht8delht8de.png" alt="Cantilevered Residence" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MOD2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MOD2-002',img:'https://i.ibb.co/Nnskqmcd/Gemini-Generated-Image-t8delht8delht8de.png',title:'Cantilevered Residence',desc:'Bold cantilevered upper floor creates a dramatic silhouette and shaded outdoor terrace below.',budget:'Rs 1,30,00,000 - 2,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-mod-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Cantilevered Residence</div>
+      <div class="card-desc">Bold cantilevered upper floor creates a dramatic silhouette and shaded outdoor terrace below.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,30,00,000 - 2,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="med-mod-3" class="panel">
+  <span class="page-eyebrow">Medium Modern — 3 Story</span>
+  <h2 class="page-title">Medium Modern 3 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-mod-3">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MOD3-001',img:'https://i.ibb.co/VYQChM5Z/Gemini-Generated-Image-93gno193gno193gn.png',title:'Tower House',desc:'Three-storey modern home with a vertical garden facade, sky lounge, and panoramic glazing.',budget:'Rs 1,60,00,000 - 2,40,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-mod-3'})">
+      <img src="https://i.ibb.co/VYQChM5Z/Gemini-Generated-Image-93gno193gno193gn.png" alt="Tower House" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MOD3-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MOD3-001',img:'https://i.ibb.co/VYQChM5Z/Gemini-Generated-Image-93gno193gno193gn.png',title:'Tower House',desc:'Three-storey modern home with a vertical garden facade, sky lounge, and panoramic glazing.',budget:'Rs 1,60,00,000 - 2,40,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-mod-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Tower House</div>
+      <div class="card-desc">Three-storey modern home with a vertical garden facade, sky lounge, and panoramic glazing.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,60,00,000 - 2,40,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MOD3-002',img:'https://i.ibb.co/tpPm5fqT/Gemini-Generated-Image-wxwkx1wxwkx1wxwk.png',title:'Stacked Volumes',desc:'Three distinct stacked volumes create a sculptural three-storey home with private terraces at each level.',budget:'Rs 1,70,00,000 - 2,60,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-mod-3'})">
+      <img src="https://i.ibb.co/tpPm5fqT/Gemini-Generated-Image-wxwkx1wxwkx1wxwk.png" alt="Stacked Volumes" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MOD3-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MOD3-002',img:'https://i.ibb.co/tpPm5fqT/Gemini-Generated-Image-wxwkx1wxwkx1wxwk.png',title:'Stacked Volumes',desc:'Three distinct stacked volumes create a sculptural three-storey home with private terraces at each level.',budget:'Rs 1,70,00,000 - 2,60,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-mod-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Stacked Volumes</div>
+      <div class="card-desc">Three distinct stacked volumes create a sculptural three-storey home with private terraces at each level.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,70,00,000 - 2,60,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="med-medi-1" class="panel">
+  <span class="page-eyebrow">Medium Mediterranean — 1 Story</span>
+  <h2 class="page-title">Medium Mediterranean 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-medi-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MED1-001',img:'https://i.ibb.co/KjwnLZRC/Gemini-Generated-Image-o92znao92znao92z.png',title:'Hacienda Estate',desc:'Single-storey Mediterranean medium home with a wraparound veranda, fountain courtyard, and clay tile roof.',budget:'Rs 85,00,000 - 1,30,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-medi-1'})">
+      <img src="https://i.ibb.co/KjwnLZRC/Gemini-Generated-Image-o92znao92znao92z.png" alt="Hacienda Estate" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MED1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MED1-001',img:'https://i.ibb.co/KjwnLZRC/Gemini-Generated-Image-o92znao92znao92z.png',title:'Hacienda Estate',desc:'Single-storey Mediterranean medium home with a wraparound veranda, fountain courtyard, and clay tile roof.',budget:'Rs 85,00,000 - 1,30,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-medi-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Hacienda Estate</div>
+      <div class="card-desc">Single-storey Mediterranean medium home with a wraparound veranda, fountain courtyard, and clay tile roof.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 85,00,000 - 1,30,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MED1-002',img:'https://i.ibb.co/G3xPvWg2/Gemini-Generated-Image-45ue0u45ue0u45ue.png',title:'Olive Grove Villa',desc:'Low-slung Mediterranean villa nestled among olive trees with stone walls and shaded loggias.',budget:'Rs 80,00,000 - 1,20,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-medi-1'})">
+      <img src="https://i.ibb.co/G3xPvWg2/Gemini-Generated-Image-45ue0u45ue0u45ue.png" alt="Olive Grove Villa" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MED1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MED1-002',img:'https://i.ibb.co/G3xPvWg2/Gemini-Generated-Image-45ue0u45ue0u45ue.png',title:'Olive Grove Villa',desc:'Low-slung Mediterranean villa nestled among olive trees with stone walls and shaded loggias.',budget:'Rs 80,00,000 - 1,20,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-medi-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Olive Grove Villa</div>
+      <div class="card-desc">Low-slung Mediterranean villa nestled among olive trees with stone walls and shaded loggias.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 80,00,000 - 1,20,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="med-medi-2" class="panel">
+  <span class="page-eyebrow">Medium Mediterranean — 2 Story</span>
+  <h2 class="page-title">Medium Mediterranean 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-medi-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MED2-001',img:'https://i.ibb.co/PvTt3Z1B/Gemini-Generated-Image-9u1d6a9u1d6a9u1d.png',title:'Riviera Residence',desc:'Two-storey Mediterranean home with sea-view balconies, arched windows, and a private pool.',budget:'Rs 1,20,00,000 - 1,80,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-medi-2'})">
+      <img src="https://i.ibb.co/PvTt3Z1B/Gemini-Generated-Image-9u1d6a9u1d6a9u1d.png" alt="Riviera Residence" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MED2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MED2-001',img:'https://i.ibb.co/PvTt3Z1B/Gemini-Generated-Image-9u1d6a9u1d6a9u1d.png',title:'Riviera Residence',desc:'Two-storey Mediterranean home with sea-view balconies, arched windows, and a private pool.',budget:'Rs 1,20,00,000 - 1,80,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-medi-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Riviera Residence</div>
+      <div class="card-desc">Two-storey Mediterranean home with sea-view balconies, arched windows, and a private pool.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,20,00,000 - 1,80,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MED2-002',img:'https://i.ibb.co/fGn4j3Fv/Gemini-Generated-Image-btfercbtfercbtfe.png',title:'Andalusian Manor',desc:'Two-storey Andalusian-inspired home with a tiled inner courtyard, wrought iron balconies, and citrus garden.',budget:'Rs 1,30,00,000 - 2,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-medi-2'})">
+      <img src="https://i.ibb.co/fGn4j3Fv/Gemini-Generated-Image-btfercbtfercbtfe.png" alt="Andalusian Manor" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MED2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MED2-002',img:'https://i.ibb.co/fGn4j3Fv/Gemini-Generated-Image-btfercbtfercbtfe.png',title:'Andalusian Manor',desc:'Two-storey Andalusian-inspired home with a tiled inner courtyard, wrought iron balconies, and citrus garden.',budget:'Rs 1,30,00,000 - 2,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-medi-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Andalusian Manor</div>
+      <div class="card-desc">Two-storey Andalusian-inspired home with a tiled inner courtyard, wrought iron balconies, and citrus garden.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,30,00,000 - 2,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="med-medi-3" class="panel">
+  <span class="page-eyebrow">Medium Mediterranean — 3 Story</span>
+  <h2 class="page-title">Medium Mediterranean 3 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-medi-3">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MED3-001',img:'https://i.ibb.co/tM1jzDxv/Gemini-Generated-Image-izwdvizwdvizwdvi.png',title:'Palazzo Inspired',desc:'Three-storey Mediterranean palazzo with grand arched entrance, rooftop terrace, and ornate stone detailing.',budget:'Rs 1,80,00,000 - 2,80,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-medi-3'})">
+      <img src="https://i.ibb.co/tM1jzDxv/Gemini-Generated-Image-izwdvizwdvizwdvi.png" alt="Palazzo Inspired" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MED3-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MED3-001',img:'https://i.ibb.co/tM1jzDxv/Gemini-Generated-Image-izwdvizwdvizwdvi.png',title:'Palazzo Inspired',desc:'Three-storey Mediterranean palazzo with grand arched entrance, rooftop terrace, and ornate stone detailing.',budget:'Rs 1,80,00,000 - 2,80,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-medi-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Palazzo Inspired</div>
+      <div class="card-desc">Three-storey Mediterranean palazzo with grand arched entrance, rooftop terrace, and ornate stone detailing.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,80,00,000 - 2,80,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-MED3-002',img:'https://i.ibb.co/RGz7FmTh/Gemini-Generated-Image-uclnbtuclnbtucln.png',title:'Coastal Palazzo',desc:'Three-storey coastal Mediterranean home with panoramic sea views, infinity pool, and terracotta finishes.',budget:'Rs 2,00,00,000 - 3,00,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-medi-3'})">
+      <img src="https://i.ibb.co/RGz7FmTh/Gemini-Generated-Image-uclnbtuclnbtucln.png" alt="Coastal Palazzo" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-MED3-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-MED3-002',img:'https://i.ibb.co/RGz7FmTh/Gemini-Generated-Image-uclnbtuclnbtucln.png',title:'Coastal Palazzo',desc:'Three-storey coastal Mediterranean home with panoramic sea views, infinity pool, and terracotta finishes.',budget:'Rs 2,00,00,000 - 3,00,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-medi-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Coastal Palazzo</div>
+      <div class="card-desc">Three-storey coastal Mediterranean home with panoramic sea views, infinity pool, and terracotta finishes.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 2,00,00,000 - 3,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="med-sus-1" class="panel">
+  <span class="page-eyebrow">Medium Sustainable — 1 Story</span>
+  <h2 class="page-title">Medium Sustainable 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-sus-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-SUS1-001',img:'https://i.ibb.co/3mYV4fBx/Gemini-Generated-Image-cxoycacxoycacxoy.png',title:'Net-Zero Ranch',desc:'Single-storey medium sustainable home achieving net-zero energy with solar array and geothermal heating.',budget:'Rs 90,00,000 - 1,40,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-sus-1'})">
+      <img src="https://i.ibb.co/3mYV4fBx/Gemini-Generated-Image-cxoycacxoycacxoy.png" alt="Net-Zero Ranch" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-SUS1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-SUS1-001',img:'https://i.ibb.co/3mYV4fBx/Gemini-Generated-Image-cxoycacxoycacxoy.png',title:'Net-Zero Ranch',desc:'Single-storey medium sustainable home achieving net-zero energy with solar array and geothermal heating.',budget:'Rs 90,00,000 - 1,40,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-sus-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Net-Zero Ranch</div>
+      <div class="card-desc">Single-storey medium sustainable home achieving net-zero energy with solar array and geothermal heating.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 90,00,000 - 1,40,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-SUS1-002',img:'https://i.ibb.co/p6xtXZ53/Gemini-Generated-Image-418rsl418rsl418r.png',title:'Biophilic Bungalow',desc:'Single-storey home integrating living walls, natural ventilation, and reclaimed timber throughout.',budget:'Rs 85,00,000 - 1,30,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-sus-1'})">
+      <img src="https://i.ibb.co/p6xtXZ53/Gemini-Generated-Image-418rsl418rsl418r.png" alt="Biophilic Bungalow" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-SUS1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-SUS1-002',img:'https://i.ibb.co/p6xtXZ53/Gemini-Generated-Image-418rsl418rsl418r.png',title:'Biophilic Bungalow',desc:'Single-storey home integrating living walls, natural ventilation, and reclaimed timber throughout.',budget:'Rs 85,00,000 - 1,30,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'med-sus-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Biophilic Bungalow</div>
+      <div class="card-desc">Single-storey home integrating living walls, natural ventilation, and reclaimed timber throughout.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 85,00,000 - 1,30,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-sustainable" class="back-btn">← Back</a>
+</section>
+
+<section id="med-sus-2" class="panel">
+  <span class="page-eyebrow">Medium Sustainable — 2 Story</span>
+  <h2 class="page-title">Medium Sustainable 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-sus-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-SUS2-001',img:'https://i.ibb.co/XxwcRmfg/Gemini-Generated-Image-9l2a7w9l2a7w9l2a.png',title:'Eco Tower',desc:'Two-storey sustainable home with a wind turbine, solar facade, and rainwater recycling system.',budget:'Rs 1,20,00,000 - 1,80,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-sus-2'})">
+<img src="https://i.ibb.co/XxwcRmfg/Gemini-Generated-Image-9l2a7w9l2a7w9l2a.png" alt="Eco Tower" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-SUS2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-SUS2-001',img:'https://i.ibb.co/XxwcRmfg/Gemini-Generated-Image-9l2a7w9l2a7w9l2a.png',title:'Eco Tower',desc:'Two-storey sustainable home with a wind turbine, solar facade, and rainwater recycling system.',budget:'Rs 1,20,00,000 - 1,80,00,000',designer:'Priya Nair',designerUrl:'#',category:'med-sus-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Eco Tower</div>
+      <div class="card-desc">Two-storey sustainable home with a wind turbine, solar facade, and rainwater recycling system.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,20,00,000 - 1,80,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-SUS2-002',img:'https://i.ibb.co/0pn30p1z/Gemini-Generated-Image-49691k49691k4969.png',title:'Passive House Duplex',desc:'Two-storey certified passive house with triple glazing, MVHR system, and super-insulated envelope.',budget:'Rs 1,10,00,000 - 1,70,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-sus-2'})">
+      <img src="https://i.ibb.co/0pn30p1z/Gemini-Generated-Image-49691k49691k4969.png" alt="Passive House Duplex" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-SUS2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-SUS2-002',img:'https://i.ibb.co/0pn30p1z/Gemini-Generated-Image-49691k49691k4969.png',title:'Passive House Duplex',desc:'Two-storey certified passive house with triple glazing, MVHR system, and super-insulated envelope.',budget:'Rs 1,10,00,000 - 1,70,00,000',designer:'Karan Verma',designerUrl:'#',category:'med-sus-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Passive House Duplex</div>
+      <div class="card-desc">Two-storey certified passive house with triple glazing, MVHR system, and super-insulated envelope.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,10,00,000 - 1,70,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-sustainable" class="back-btn">← Back</a>
+</section>
+
+<section id="med-sus-3" class="panel">
+  <span class="page-eyebrow">Medium Sustainable — 3 Story</span>
+  <h2 class="page-title">Medium Sustainable 3 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-med-sus-3">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-SUS3-001',img:'https://i.ibb.co/DgV8CR4q/Architectural-plan-of-202603230047.jpg',title:'Vertical Eco Village',desc:'Three-storey sustainable home with sky gardens at each level and a community solar microgrid.',budget:'Rs 1,60,00,000 - 2,40,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-sus-3'})">
+      <img src="https://i.ibb.co/DgV8CR4q/Architectural-plan-of-202603230047.jpg" alt="Vertical Eco Village" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-SUS3-001" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-SUS3-001',img:'https://i.ibb.co/DgV8CR4q/Architectural-plan-of-202603230047.jpg',title:'Vertical Eco Village',desc:'Three-storey sustainable home with sky gardens at each level and a community solar microgrid.',budget:'Rs 1,60,00,000 - 2,40,00,000',designer:'Riya Sharma',designerUrl:'#',category:'med-sus-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Vertical Eco Village</div>
+      <div class="card-desc">Three-storey sustainable home with sky gardens at each level and a community solar microgrid.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,60,00,000 - 2,40,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'MM-SUS3-002',img:'https://i.ibb.co/b5hYCD5C/Parametric-home-data-202603230048.jpg',title:'Parametric Green Tower',desc:'Three-storey parametrically designed home optimised for solar gain, wind flow, and material efficiency.',budget:'Rs 1,80,00,000 - 2,70,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-sus-3'})">
+      <img src="https://i.ibb.co/b5hYCD5C/Parametric-home-data-202603230048.jpg" alt="Parametric Green Tower" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="MM-SUS3-002" onclick="event.stopPropagation();toggleSaved(this,{id:'MM-SUS3-002',img:'https://i.ibb.co/b5hYCD5C/Parametric-home-data-202603230048.jpg',title:'Parametric Green Tower',desc:'Three-storey parametrically designed home optimised for solar gain, wind flow, and material efficiency.',budget:'Rs 1,80,00,000 - 2,70,00,000',designer:'Anika Singh',designerUrl:'#',category:'med-sus-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Parametric Green Tower</div>
+      <div class="card-desc">Three-storey parametrically designed home optimised for solar gain, wind flow, and material efficiency.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 1,80,00,000 - 2,70,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#med-sustainable" class="back-btn">← Back</a>
+</section>
+
+<!-- LARGE -->
+<section id="large" class="panel">
+  <span class="page-eyebrow">Size 03</span>
+  <h2 class="page-title">Large Home.</h2>
+  <div class="style-btns">
+    <a href="#large-modern" class="btn-style">Modern</a>
+    <a href="#large-mediterranean" class="btn-style">Mediterranean</a>
+    <a href="#large-sustainable" class="btn-style">Sustainable</a>
+  </div>
+  <a href="#home" class="back-btn">← Back</a>
+</section>
+
+<section id="large-modern" class="panel">
+  <span class="page-eyebrow">Large — Modern</span>
+  <h2 class="page-title">Large Modern.</h2>
+  <div class="style-btns">
+    <a href="#l-mod-1" class="btn-style">1 Story</a>
+    <a href="#l-mod-2" class="btn-style">2 Story</a>
+    <a href="#l-mod-3" class="btn-style">3 Story</a>
+  </div>
+  <a href="#large" class="back-btn">← Back</a>
+</section>
+
+<section id="large-mediterranean" class="panel">
+  <span class="page-eyebrow">Large — Mediterranean</span>
+  <h2 class="page-title">Large Mediterranean.</h2>
+  <div class="style-btns">
+    <a href="#l-med-1" class="btn-style">1 Story</a>
+    <a href="#l-med-2" class="btn-style">2 Story</a>
+    <a href="#l-med-3" class="btn-style">3 Story</a>
+  </div>
+  <a href="#large" class="back-btn">← Back</a>
+</section>
+
+<section id="large-sustainable" class="panel">
+  <span class="page-eyebrow">Large — Sustainable</span>
+  <h2 class="page-title">Large Sustainable.</h2>
+  <div class="style-btns">
+    <a href="#l-sus-1" class="btn-style">1 Story</a>
+    <a href="#l-sus-2" class="btn-style">2 Story</a>
+    <a href="#l-sus-3" class="btn-style">3 Story</a>
+  </div>
+  <a href="#large" class="back-btn">← Back</a>
+</section>
+
+<section id="l-mod-1" class="panel">
+  <span class="page-eyebrow">Large Modern — 1 Story</span>
+  <h2 class="page-title">Large Modern 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-mod-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MOD1-001',img:'https://i.ibb.co/kgZ478kM/Architect-concept-site-202603230134.jpg',title:'Estate Ranch',desc:'Sprawling single-storey large modern estate with a 5-car garage, infinity pool, and guest pavilion.',budget:'Rs 3,00,00,000 - 5,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-mod-1'})">
+      <img src="https://i.ibb.co/kgZ478kM/Architect-concept-site-202603230134.jpg" alt="Estate Ranch" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MOD1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MOD1-001',img:'https://i.ibb.co/kgZ478kM/Architect-concept-site-202603230134.jpg',title:'Estate Ranch',desc:'Sprawling single-storey large modern estate with a 5-car garage, infinity pool, and guest pavilion.',budget:'Rs 3,00,00,000 - 5,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-mod-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Estate Ranch</div>
+      <div class="card-desc">Sprawling single-storey large modern estate with a 5-car garage, infinity pool, and guest pavilion.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 3,00,00,000 - 5,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MOD1-002',img:'https://i.ibb.co/GQ4KqQRM/Architectural-site-plan-202603230205.jpg',title:'Horizon House',desc:'Single-storey large home stretching across the landscape with a 60m glass facade and sunken garden.',budget:'Rs 3,50,00,000 - 5,50,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-mod-1'})">
+      <img src="https://i.ibb.co/GQ4KqQRM/Architectural-site-plan-202603230205.jpg" alt="Horizon House" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MOD1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MOD1-002',img:'https://i.ibb.co/GQ4KqQRM/Architectural-site-plan-202603230205.jpg',title:'Horizon House',desc:'Single-storey large home stretching across the landscape with a 60m glass facade and sunken garden.',budget:'Rs 3,50,00,000 - 5,50,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-mod-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Horizon House</div>
+      <div class="card-desc">Single-storey large home stretching across the landscape with a 60m glass facade and sunken garden.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 3,50,00,000 - 5,50,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="l-mod-2" class="panel">
+  <span class="page-eyebrow">Large Modern — 2 Story</span>
+  <h2 class="page-title">Large Modern 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-mod-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MOD2-001',img:'https://i.ibb.co/MkDtFZQQ/Estate-site-plan-202603230240.jpg',title:'Grand Modern Villa',desc:'Two-storey large modern villa with a double-height atrium, home cinema, and landscaped grounds.',budget:'Rs 4,50,00,000 - 7,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-mod-2'})">
+      <img src="https://i.ibb.co/MkDtFZQQ/Estate-site-plan-202603230240.jpg" alt="Grand Modern Villa" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MOD2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MOD2-001',img:'https://i.ibb.co/MkDtFZQQ/Estate-site-plan-202603230240.jpg',title:'Grand Modern Villa',desc:'Two-storey large modern villa with a double-height atrium, home cinema, and landscaped grounds.',budget:'Rs 4,50,00,000 - 7,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-mod-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Grand Modern Villa</div>
+      <div class="card-desc">Two-storey large modern villa with a double-height atrium, home cinema, and landscaped grounds.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 4,50,00,000 - 7,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MOD2-002',img:'https://i.ibb.co/fVv4sxpq/Gemini-Generated-Image-7bwfl97bwfl97bwf.png',title:'Skyline Residence',desc:'Two-storey large home with a rooftop helipad, panoramic glazing, and smart home automation throughout.',budget:'Rs 5,00,00,000 - 8,00,00,000',designer:'Riya Sharma',designerUrl:'#',category:'l-mod-2'})">
+      <img src="https://i.ibb.co/fVv4sxpq/Gemini-Generated-Image-7bwfl97bwfl97bwf.png" alt="Skyline Residence" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MOD2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MOD2-002',img:'https://i.ibb.co/fVv4sxpq/Gemini-Generated-Image-7bwfl97bwfl97bwf.png',title:'Skyline Residence',desc:'Two-storey large home with a rooftop helipad, panoramic glazing, and smart home automation throughout.',budget:'Rs 5,00,00,000 - 8,00,00,000',designer:'Riya Sharma',designerUrl:'#',category:'l-mod-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Skyline Residence</div>
+      <div class="card-desc">Two-storey large home with a rooftop helipad, panoramic glazing, and smart home automation throughout.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 5,00,00,000 - 8,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="l-mod-3" class="panel">
+  <span class="page-eyebrow">Large Modern — 3 Story</span>
+  <h2 class="page-title">Large Modern 3 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-mod-3">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MOD3-001',img:'https://i.ibb.co/C38zkV8S/Gemini-Generated-Image-s86p18s86p18s86p.png',title:'Penthouse Tower',desc:'Three-storey large modern home with a private lift, sky pool, and 360-degree rooftop observatory.',budget:'Rs 6,00,00,000 - 10,00,00,000',designer:'Anika Singh',designerUrl:'#',category:'l-mod-3'})">
+      <img src="https://i.ibb.co/C38zkV8S/Gemini-Generated-Image-s86p18s86p18s86p.png" alt="Penthouse Tower" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MOD3-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MOD3-001',img:'https://i.ibb.co/C38zkV8S/Gemini-Generated-Image-s86p18s86p18s86p.png',title:'Penthouse Tower',desc:'Three-storey large modern home with a private lift, sky pool, and 360-degree rooftop observatory.',budget:'Rs 6,00,00,000 - 10,00,00,000',designer:'Anika Singh',designerUrl:'#',category:'l-mod-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Penthouse Tower</div>
+      <div class="card-desc">Three-storey large modern home with a private lift, sky pool, and 360-degree rooftop observatory.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 6,00,00,000 - 10,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MOD3-002',img:'https://i.ibb.co/DD09XKyy/Gemini-Generated-Image-gedm1xgedm1xgedm.png',title:'Cascading Terraces',desc:'Three-storey large home with cascading terraced gardens, waterfall feature, and glass bridge connections.',budget:'Rs 7,00,00,000 - 11,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-mod-3'})">
+      <img src="https://i.ibb.co/DD09XKyy/Gemini-Generated-Image-gedm1xgedm1xgedm.png" alt="Cascading Terraces" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MOD3-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MOD3-002',img:'https://i.ibb.co/DD09XKyy/Gemini-Generated-Image-gedm1xgedm1xgedm.png',title:'Cascading Terraces',desc:'Three-storey large home with cascading terraced gardens, waterfall feature, and glass bridge connections.',budget:'Rs 7,00,00,000 - 11,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-mod-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Cascading Terraces</div>
+      <div class="card-desc">Three-storey large home with cascading terraced gardens, waterfall feature, and glass bridge connections.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 7,00,00,000 - 11,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-modern" class="back-btn">← Back</a>
+</section>
+
+<section id="l-med-1" class="panel">
+  <span class="page-eyebrow">Large Mediterranean — 1 Story</span>
+  <h2 class="page-title">Large Mediterranean 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-med-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MED1-001',img:'https://i.ibb.co/gb39V0WB/Estate-site-plan-202603231544.jpg',title:'Grand Hacienda',desc:'Single-storey large Mediterranean estate with multiple courtyards, stables, and a vineyard.',budget:'Rs 3,50,00,000 - 6,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-med-1'})">
+      <img src="https://i.ibb.co/gb39V0WB/Estate-site-plan-202603231544.jpg" alt="Grand Hacienda" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MED1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MED1-001',img:'https://i.ibb.co/gb39V0WB/Estate-site-plan-202603231544.jpg',title:'Grand Hacienda',desc:'Single-storey large Mediterranean estate with multiple courtyards, stables, and a vineyard.',budget:'Rs 3,50,00,000 - 6,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-med-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Grand Hacienda</div>
+      <div class="card-desc">Single-storey large Mediterranean estate with multiple courtyards, stables, and a vineyard.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 3,50,00,000 - 6,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MED1-002',img:'https://i.ibb.co/gLnPTCx4/Gemini-Generated-Image-mwq0lpmwq0lpmwq0.png',title:'Tuscan Estate',desc:'Single-storey Tuscan estate with a chapel, olive grove, and traditional stone farmhouse architecture.',budget:'Rs 4,00,00,000 - 6,50,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-med-1'})">
+      <img src="https://i.ibb.co/gLnPTCx4/Gemini-Generated-Image-mwq0lpmwq0lpmwq0.png" alt="Tuscan Estate" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MED1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MED1-002',img:'https://i.ibb.co/gLnPTCx4/Gemini-Generated-Image-mwq0lpmwq0lpmwq0.png',title:'Tuscan Estate',desc:'Single-storey Tuscan estate with a chapel, olive grove, and traditional stone farmhouse architecture.',budget:'Rs 4,00,00,000 - 6,50,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-med-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Tuscan Estate</div>
+      <div class="card-desc">Single-storey Tuscan estate with a chapel, olive grove, and traditional stone farmhouse architecture.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 4,00,00,000 - 6,50,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="l-med-2" class="panel">
+  <span class="page-eyebrow">Large Mediterranean — 2 Story</span>
+  <h2 class="page-title">Large Mediterranean 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-med-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MED2-001',img:'https://i.ibb.co/CpTQhzfd/Gemini-Generated-Image-5hh4wi5hh4wi5hh4.png',title:'Amalfi Villa',desc:'Two-storey large Mediterranean villa cascading down a hillside with terraced pools and sea views.',budget:'Rs 5,50,00,000 - 9,00,00,000',designer:'Riya Sharma',designerUrl:'#',category:'l-med-2'})">
+      <img src="https://i.ibb.co/CpTQhzfd/Gemini-Generated-Image-5hh4wi5hh4wi5hh4.png" alt="Amalfi Villa" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MED2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MED2-001',img:'https://i.ibb.co/CpTQhzfd/Gemini-Generated-Image-5hh4wi5hh4wi5hh4.png',title:'Amalfi Villa',desc:'Two-storey large Mediterranean villa cascading down a hillside with terraced pools and sea views.',budget:'Rs 5,50,00,000 - 9,00,00,000',designer:'Riya Sharma',designerUrl:'#',category:'l-med-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Amalfi Villa</div>
+      <div class="card-desc">Two-storey large Mediterranean villa cascading down a hillside with terraced pools and sea views.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 5,50,00,000 - 9,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MED2-002',img:'https://i.ibb.co/5XXqqdPX/Mediterranean-villa-floor-202603241947.jpg',title:'Riviera Palace',desc:'Two-storey large Mediterranean palace with a grand ballroom, private beach access, and formal gardens.',budget:'Rs 6,00,00,000 - 10,00,00,000',designer:'Anika Singh',designerUrl:'#',category:'l-med-2'})">
+      <img src="https://i.ibb.co/5XXqqdPX/Mediterranean-villa-floor-202603241947.jpg" alt="Riviera Palace" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MED2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MED2-002',img:'https://i.ibb.co/5XXqqdPX/Mediterranean-villa-floor-202603241947.jpg',title:'Riviera Palace',desc:'Two-storey large Mediterranean palace with a grand ballroom, private beach access, and formal gardens.',budget:'Rs 6,00,00,000 - 10,00,00,000',designer:'Anika Singh',designerUrl:'#',category:'l-med-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Riviera Palace</div>
+      <div class="card-desc">Two-storey large Mediterranean palace with a grand ballroom, private beach access, and formal gardens.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 6,00,00,000 - 10,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="l-med-3" class="panel">
+  <span class="page-eyebrow">Large Mediterranean — 3 Story</span>
+  <h2 class="page-title">Large Mediterranean 3 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-med-3">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MED3-001',img:'https://i.ibb.co/5WvzTF0C/Gemini-Generated-Image-rrjv3orrjv3orrjv.png',title:'Venetian Palazzo',desc:'Three-storey large Mediterranean palazzo with grand staircases, frescoed ceilings, and a private canal.',budget:'Rs 8,00,00,000 - 14,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-med-3'})">
+      <img src="https://i.ibb.co/5WvzTF0C/Gemini-Generated-Image-rrjv3orrjv3orrjv.png" alt="Venetian Palazzo" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MED3-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MED3-001',img:'https://i.ibb.co/5WvzTF0C/Gemini-Generated-Image-rrjv3orrjv3orrjv.png',title:'Venetian Palazzo',desc:'Three-storey large Mediterranean palazzo with grand staircases, frescoed ceilings, and a private canal.',budget:'Rs 8,00,00,000 - 14,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-med-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Venetian Palazzo</div>
+      <div class="card-desc">Three-storey large Mediterranean palazzo with grand staircases, frescoed ceilings, and a private canal.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 8,00,00,000 - 14,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-MED3-002',img:'https://i.ibb.co/mrcTvMvg/Gemini-Generated-Image-p9180jp9180jp918.png',title:'Moorish Castle',desc:'Three-storey Moorish-inspired large home with towers, ornate tilework, and a central reflecting pool.',budget:'Rs 9,00,00,000 - 15,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-med-3'})">
+      <img src="https://i.ibb.co/mrcTvMvg/Gemini-Generated-Image-p9180jp9180jp918.png" alt="Moorish Castle" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-MED3-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-MED3-002',img:'https://i.ibb.co/mrcTvMvg/Gemini-Generated-Image-p9180jp9180jp918.png',title:'Moorish Castle',desc:'Three-storey Moorish-inspired large home with towers, ornate tilework, and a central reflecting pool.',budget:'Rs 9,00,00,000 - 15,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-med-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Moorish Castle</div>
+      <div class="card-desc">Three-storey Moorish-inspired large home with towers, ornate tilework, and a central reflecting pool.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 9,00,00,000 - 15,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-mediterranean" class="back-btn">← Back</a>
+</section>
+
+<section id="l-sus-1" class="panel">
+  <span class="page-eyebrow">Large Sustainable — 1 Story</span>
+  <h2 class="page-title">Large Sustainable 1 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-sus-1">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-SUS1-001',img:'https://i.ibb.co/99FL4RtH/Earth-sheltered-sustainable-202603250044.jpg',title:'Earth-Sheltered Estate',desc:'Single-storey large sustainable home built into the hillside with a living roof and passive cooling.',budget:'Rs 3,00,00,000 - 5,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-sus-1'})">
+      <img src="https://i.ibb.co/99FL4RtH/Earth-sheltered-sustainable-202603250044.jpg" alt="Earth-Sheltered Estate" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-SUS1-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-SUS1-001',img:'https://i.ibb.co/99FL4RtH/Earth-sheltered-sustainable-202603250044.jpg',title:'Earth-Sheltered Estate',desc:'Single-storey large sustainable home built into the hillside with a living roof and passive cooling.',budget:'Rs 3,00,00,000 - 5,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-sus-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Earth-Sheltered Estate</div>
+      <div class="card-desc">Single-storey large sustainable home built into the hillside with a living roof and passive cooling.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 3,00,00,000 - 5,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-SUS1-002',img:'https://i.ibb.co/205SLJrN/Sustainable-passive-house-202603250043-1.jpg',title:'Solar Farm Residence',desc:'Single-storey large home with an integrated solar farm, battery storage, and EV charging infrastructure.',budget:'Rs 3,50,00,000 - 5,50,00,000',designer:'Riya Sharma',designerUrl:'#',category:'l-sus-1'})">
+      <img src="https://i.ibb.co/205SLJrN/Sustainable-passive-house-202603250043-1.jpg" alt="Solar Farm Residence" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-SUS1-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-SUS1-002',img:'https://i.ibb.co/205SLJrN/Sustainable-passive-house-202603250043-1.jpg',title:'Solar Farm Residence',desc:'Single-storey large home with an integrated solar farm, battery storage, and EV charging infrastructure.',budget:'Rs 3,50,00,000 - 5,50,00,000',designer:'Riya Sharma',designerUrl:'#',category:'l-sus-1'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Solar Farm Residence</div>
+      <div class="card-desc">Single-storey large home with an integrated solar farm, battery storage, and EV charging infrastructure.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 3,50,00,000 - 5,50,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-sustainable" class="back-btn">← Back</a>
+</section>
+
+<section id="l-sus-2" class="panel">
+  <span class="page-eyebrow">Large Sustainable — 2 Story</span>
+  <h2 class="page-title">Large Sustainable 2 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-sus-2">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-SUS2-001',img:'https://i.ibb.co/sv9vQhMb/Sustainable-villa-floor-202603251426-1.jpg',title:'Eco Mansion',desc:'Two-storey large sustainable mansion with a geothermal system, green roofs, and a private nature reserve.',budget:'Rs 5,00,00,000 - 8,00,00,000',designer:'Anika Singh',designerUrl:'#',category:'l-sus-2'})">
+      <img src="https://i.ibb.co/sv9vQhMb/Sustainable-villa-floor-202603251426-1.jpg" alt="Eco Mansion" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-SUS2-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-SUS2-001',img:'https://i.ibb.co/sv9vQhMb/Sustainable-villa-floor-202603251426-1.jpg',title:'Eco Mansion',desc:'Two-storey large sustainable mansion with a geothermal system, green roofs, and a private nature reserve.',budget:'Rs 5,00,00,000 - 8,00,00,000',designer:'Anika Singh',designerUrl:'#',category:'l-sus-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Eco Mansion</div>
+      <div class="card-desc">Two-storey large sustainable mansion with a geothermal system, green roofs, and a private nature reserve.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 5,00,00,000 - 8,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-SUS2-002',img:'https://i.ibb.co/fzqfnbPP/Sustainable-villa-floor-202603251426.jpg',title:'Biosphere Villa',desc:'Two-storey large home designed as a closed-loop biosphere with aquaponics, composting, and zero waste.',budget:'Rs 5,50,00,000 - 9,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-sus-2'})">
+      <img src="https://i.ibb.co/fzqfnbPP/Sustainable-villa-floor-202603251426.jpg" alt="Biosphere Villa" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-SUS2-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-SUS2-002',img:'https://i.ibb.co/fzqfnbPP/Sustainable-villa-floor-202603251426.jpg',title:'Biosphere Villa',desc:'Two-storey large home designed as a closed-loop biosphere with aquaponics, composting, and zero waste.',budget:'Rs 5,50,00,000 - 9,00,00,000',designer:'Arjun Mehta',designerUrl:'#',category:'l-sus-2'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Biosphere Villa</div>
+      <div class="card-desc">Two-storey large home designed as a closed-loop biosphere with aquaponics, composting, and zero waste.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 5,50,00,000 - 9,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Arjun Mehta</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-sustainable" class="back-btn">← Back</a>
+</section>
+
+<section id="l-sus-3" class="panel">
+  <span class="page-eyebrow">Large Sustainable — 3 Story</span>
+  <h2 class="page-title">Large Sustainable 3 Story.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-l-sus-3">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-SUS3-001',img:'https://i.ibb.co/gbZtXvM0/Eco-mansion-floor-202603251448.jpg',title:'Regenerative Estate',desc:'Three-storey large sustainable estate that generates more energy than it consumes with a community microgrid.',budget:'Rs 7,00,00,000 - 12,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-sus-3'})">
+      <img src="https://i.ibb.co/gbZtXvM0/Eco-mansion-floor-202603251448.jpg" alt="Regenerative Estate" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-SUS3-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-SUS3-001',img:'https://i.ibb.co/gbZtXvM0/Eco-mansion-floor-202603251448.jpg',title:'Regenerative Estate',desc:'Three-storey large sustainable estate that generates more energy than it consumes with a community microgrid.',budget:'Rs 7,00,00,000 - 12,00,00,000',designer:'Priya Nair',designerUrl:'#',category:'l-sus-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Regenerative Estate</div>
+      <div class="card-desc">Three-storey large sustainable estate that generates more energy than it consumes with a community microgrid.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 7,00,00,000 - 12,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LG-SUS3-002',img:'https://i.ibb.co/0y8HdZg7/Eco-mansion-floor-202603251449.jpg',title:'Carbon-Negative Tower',desc:'Three-storey large home built with carbon-sequestering materials and a vertical forest facade.',budget:'Rs 8,00,00,000 - 13,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-sus-3'})">
+      <img src="https://i.ibb.co/0y8HdZg7/Eco-mansion-floor-202603251449.jpg" alt="Carbon-Negative Tower" loading="lazy">
+      <button class="card-heart" aria-label="Save" data-id="LG-SUS3-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LG-SUS3-002',img:'https://i.ibb.co/0y8HdZg7/Eco-mansion-floor-202603251449.jpg',title:'Carbon-Negative Tower',desc:'Three-storey large home built with carbon-sequestering materials and a vertical forest facade.',budget:'Rs 8,00,00,000 - 13,00,00,000',designer:'Karan Verma',designerUrl:'#',category:'l-sus-3'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Carbon-Negative Tower</div>
+      <div class="card-desc">Three-storey large home built with carbon-sequestering materials and a vertical forest facade.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 8,00,00,000 - 13,00,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="#">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#large-sustainable" class="back-btn">← Back</a>
+</section>
+
+
+
+<footer>© 2026 ArchMind Dream Home Planner · <a href="mailto:archmind@gmail.com" style="color:var(--p);text-decoration:none;">archmind@gmail.com</a></footer>
+
+<!-- ARCHIVE -->
+<section id="archive">
+  <span class="page-eyebrow">Saved Designs</span>
+  <h2 class="page-title">Your Archive.</h2>
+  <p class="page-sub">Designs you've hearted — collected here for easy reference.</p>
+  <div id="archive-grid" class="option-grid"></div>
+  <div id="archive-empty" class="archive-empty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <p>No saved designs yet. Browse and tap ♡ to save your favourites.</p>
+  </div>
+  <a href="#home" class="back-btn" style="margin-top:40px">← Browse Designs</a>
+</section>
+
+<script src="archmind.js"></script>
+</body>
+</html>
+

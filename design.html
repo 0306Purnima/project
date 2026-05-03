@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dream Home Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="archmind.css">
+</head>
+<body>
+<nav>
+  <a href="#home" class="nav-logo">Dream Home</a>
+  <a href="Archmind.html" class="nav-link">Home</a>
+  <a href="login.html" class="nav-link">Login</a>
+  <div class="nav-right">
+    <a href="#archive" class="nav-link">&#9825; Saved</a>
+    <select class="nav-select" onchange="location=this.value;">
+      <option value="#home">Room</option>
+      <option value="#living">Living Room</option>
+      <option value="#bedroom">Bedroom</option>
+      <option value="#kitchen">Kitchen</option>
+      <option value="#dining">Dining</option>
+      <option value="#bathroom">Bathroom</option>
+    </select>
+    <select class="nav-select" onchange="location=this.value;">
+      <option value="#home">Style</option>
+      <option value="#living-modern">Living Modern</option>
+      <option value="#living-luxury">Living Luxury</option>
+      <option value="#living-minimal">Living Minimal</option>
+      <option value="#bed-modern">Bedroom Modern</option>
+      <option value="#bed-cozy">Bedroom Cozy</option>
+      <option value="#bed-luxury">Bedroom Luxury</option>
+      <option value="#kit-modern">Kitchen Modern</option>
+      <option value="#kit-classic">Kitchen Classic</option>
+      <option value="#kit-minimal">Kitchen Minimal</option>
+      <option value="#din-modern">Dining Modern</option>
+      <option value="#din-elegant">Dining Elegant</option>
+      <option value="#din-luxury">Dining Luxury</option>
+      <option value="#bath-modern">Bathroom Modern</option>
+      <option value="#bath-classic">Bathroom Classic</option>
+      <option value="#bath-luxury">Bathroom Luxury</option>
+    </select>
+  </div>
+</nav>
+
+
+<section id="home" class="panel">
+  <span class="page-eyebrow">Dream Home Designer</span>
+  <h1 class="page-title">Design Your Dream Home.</h1>
+  <p class="page-sub">Explore curated room styles &mdash; modern, luxury, minimal &amp; more.</p>
+  <div class="home-grid">
+
+    <a href="#living" class="home-card living">
+      <div class="overlay"><span class="overlay-eye">Room 01</span>Living Room</div>
+    </a>
+
+    <a href="#bedroom" class="home-card bedroom">
+      <div class="overlay"><span class="overlay-eye">Room 02</span>Bedroom</div>
+    </a>
+
+    <a href="#kitchen" class="home-card kitchen">
+      <div class="overlay"><span class="overlay-eye">Room 03</span>Kitchen</div>
+    </a>
+
+    <a href="#dining" class="home-card dining">
+      <div class="overlay"><span class="overlay-eye">Room 04</span>Dining</div>
+    </a>
+
+    <a href="#bathroom" class="home-card bathroom">
+      <div class="overlay"><span class="overlay-eye">Room 05</span>Bathroom</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- LIVING ROOM -->
+<section id="living" class="panel">
+  <span class="page-eyebrow">Room 01</span>
+  <h2 class="page-title">Living Room.</h2>
+  <div class="style-btns">
+    <a href="#living-modern" class="btn-style">Modern</a>
+    <a href="#living-luxury" class="btn-style">Luxury</a>
+    <a href="#living-minimal" class="btn-style">Minimal</a>
+  </div>
+  <a href="#home" class="back-btn">&#8592; Back</a>
+</section>
+<section id="living-modern" class="panel">
+  <span class="page-eyebrow">Living Room &mdash; Modern</span>
+  <h2 class="page-title">Modern Living Room.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-living-modern">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LV-MOD-001',img:'https://i.pinimg.com/736x/eb/2f/50/eb2f5073d6d81dc8459e9127e04eb632.jpg',title:'Contemporary Living',desc:'A seamless blend of clean lines and warm tones creates an inviting modern living space.',budget:'Rs 45,000 - 80,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'living-modern'})">
+      <img src="https://i.pinimg.com/736x/eb/2f/50/eb2f5073d6d81dc8459e9127e04eb632.jpg" alt="Contemporary Living" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="LV-MOD-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LV-MOD-001',img:'https://i.pinimg.com/736x/eb/2f/50/eb2f5073d6d81dc8459e9127e04eb632.jpg',title:'Contemporary Living',desc:'A seamless blend of clean lines and warm tones creates an inviting modern living space.',budget:'Rs 45,000 - 80,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'living-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Contemporary Living</div>
+      <div class="card-desc">A seamless blend of clean lines and warm tones creates an inviting modern living space.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 45,000 - 80,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/riya-sharma" target="_blank">Riya Sharma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LV-MOD-002',img:'https://i.pinimg.com/1200x/32/b4/f6/32b4f60969bb8ab6294e2123c3fb993b.jpg',title:'Open Plan Flow',desc:'Wide-open layouts with neutral palettes that amplify natural light and sense of space.',budget:'Rs 20,000 - 40,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'living-modern'})">
+      <img src="https://i.pinimg.com/1200x/32/b4/f6/32b4f60969bb8ab6294e2123c3fb993b.jpg" alt="Open Plan Flow" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="LV-MOD-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LV-MOD-002',img:'https://i.pinimg.com/1200x/32/b4/f6/32b4f60969bb8ab6294e2123c3fb993b.jpg',title:'Open Plan Flow',desc:'Wide-open layouts with neutral palettes that amplify natural light and sense of space.',budget:'Rs 20,000 - 40,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'living-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Open Plan Flow</div>
+      <div class="card-desc">Wide-open layouts with neutral palettes that amplify natural light and sense of space.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 20,000 - 40,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/arjun-mehta" target="_blank">Arjun Mehta</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#living" class="back-btn">&#8592; Back</a>
+</section>
+<section id="living-luxury" class="panel">
+  <span class="page-eyebrow">Living Room &mdash; Luxury</span>
+  <h2 class="page-title">Luxury Living Room.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-living-luxury">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LV-LUX-001',img:'https://i.pinimg.com/1200x/90/c7/2a/90c72a68560fb150df1a9d3b56ada94e.jpg',title:'Grand Salon',desc:'Opulent furnishings and sculptural lighting define a living room fit for a palace.',budget:'Rs 18,000 - 35,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'living-luxury'})">
+      <img src="https://i.pinimg.com/1200x/90/c7/2a/90c72a68560fb150df1a9d3b56ada94e.jpg" alt="Grand Salon" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="LV-LUX-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LV-LUX-001',img:'https://i.pinimg.com/1200x/90/c7/2a/90c72a68560fb150df1a9d3b56ada94e.jpg',title:'Grand Salon',desc:'Opulent furnishings and sculptural lighting define a living room fit for a palace.',budget:'Rs 18,000 - 35,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'living-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Grand Salon</div>
+      <div class="card-desc">Opulent furnishings and sculptural lighting define a living room fit for a palace.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 18,000 - 35,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/anika-singh" target="_blank">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LV-LUX-002',img:'https://i.pinimg.com/1200x/31/a0/23/31a0230d9b2c12ffbec24f4f33199700.jpg',title:'Velvet and Gold',desc:'Deep jewel tones meet gilded accents in this lavish formal living arrangement.',budget:'Rs 22,000 - 42,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'living-luxury'})">
+      <img src="https://i.pinimg.com/1200x/31/a0/23/31a0230d9b2c12ffbec24f4f33199700.jpg" alt="Velvet and Gold" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="LV-LUX-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LV-LUX-002',img:'https://i.pinimg.com/1200x/31/a0/23/31a0230d9b2c12ffbec24f4f33199700.jpg',title:'Velvet and Gold',desc:'Deep jewel tones meet gilded accents in this lavish formal living arrangement.',budget:'Rs 22,000 - 42,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'living-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Velvet and Gold</div>
+      <div class="card-desc">Deep jewel tones meet gilded accents in this lavish formal living arrangement.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 22,000 - 42,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/riya-sharma" target="_blank">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#living" class="back-btn">&#8592; Back</a>
+</section>
+<section id="living-minimal" class="panel">
+  <span class="page-eyebrow">Living Room &mdash; Minimal</span>
+  <h2 class="page-title">Minimal Living Room.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-living-minimal">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LV-MIN-001',img:'https://i.pinimg.com/736x/01/64/0b/01640b5be2c6e9e55743bcfdae911c55.jpg',title:'Quiet White',desc:'A near-empty room where every chosen object speaks - restraint as design.',budget:'Rs 40,000 - 90,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'living-minimal'})">
+      <img src="https://i.pinimg.com/736x/01/64/0b/01640b5be2c6e9e55743bcfdae911c55.jpg" alt="Quiet White" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="LV-MIN-001" onclick="event.stopPropagation();toggleSaved(this,{id:'LV-MIN-001',img:'https://i.pinimg.com/736x/01/64/0b/01640b5be2c6e9e55743bcfdae911c55.jpg',title:'Quiet White',desc:'A near-empty room where every chosen object speaks - restraint as design.',budget:'Rs 40,000 - 90,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'living-minimal'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Quiet White</div>
+      <div class="card-desc">A near-empty room where every chosen object speaks - restraint as design.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 40,000 - 90,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/karan-verma" target="_blank">Karan Verma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'LV-MIN-002',img:'https://i.pinimg.com/736x/b9/15/45/b9154503e8d0fecf89b4859abf56ddc8.jpg',title:'Zen Living',desc:'Low furniture, natural materials, and disciplined negative space invite calm.',budget:'Rs 15,000 - 30,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'living-minimal'})">
+      <img src="https://i.pinimg.com/736x/b9/15/45/b9154503e8d0fecf89b4859abf56ddc8.jpg" alt="Zen Living" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="LV-MIN-002" onclick="event.stopPropagation();toggleSaved(this,{id:'LV-MIN-002',img:'https://i.pinimg.com/736x/b9/15/45/b9154503e8d0fecf89b4859abf56ddc8.jpg',title:'Zen Living',desc:'Low furniture, natural materials, and disciplined negative space invite calm.',budget:'Rs 15,000 - 30,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'living-minimal'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Zen Living</div>
+      <div class="card-desc">Low furniture, natural materials, and disciplined negative space invite calm.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 15,000 - 30,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/anika-singh" target="_blank">Anika Singh</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#living" class="back-btn">&#8592; Back</a>
+</section>
+
+<!-- BEDROOM -->
+<section id="bedroom" class="panel">
+  <span class="page-eyebrow">Room 02</span>
+  <h2 class="page-title">Bedroom.</h2>
+  <div class="style-btns">
+    <a href="#bed-modern" class="btn-style">Modern</a>
+    <a href="#bed-cozy" class="btn-style">Cozy</a>
+    <a href="#bed-luxury" class="btn-style">Luxury</a>
+  </div>
+  <a href="#home" class="back-btn">&#8592; Back</a>
+</section>
+<section id="bed-modern" class="panel">
+  <span class="page-eyebrow">Bedroom &mdash; Modern</span>
+  <h2 class="page-title">Modern Bedroom.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-bed-modern">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BD-MOD-001',img:'https://i.pinimg.com/736x/66/fe/49/66fe496bbf4d748b0b9e925bd7d5a9f3.jpg',title:'Platform Sanctuary',desc:'A low-profile platform bed anchors a disciplined, modern sleeping space.',budget:'Rs 28,000 - 55,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'bed-modern'})">
+      <img src="https://i.pinimg.com/736x/66/fe/49/66fe496bbf4d748b0b9e925bd7d5a9f3.jpg" alt="Platform Sanctuary" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BD-MOD-001" onclick="event.stopPropagation();toggleSaved(this,{id:'BD-MOD-001',img:'https://i.pinimg.com/736x/66/fe/49/66fe496bbf4d748b0b9e925bd7d5a9f3.jpg',title:'Platform Sanctuary',desc:'A low-profile platform bed anchors a disciplined, modern sleeping space.',budget:'Rs 28,000 - 55,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'bed-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Platform Sanctuary</div>
+      <div class="card-desc">A low-profile platform bed anchors a disciplined, modern sleeping space.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 28,000 - 55,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/priya-nair" target="_blank">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BD-MOD-002',img:'https://i.pinimg.com/736x/00/a0/e1/00a0e1a8fa72668988248594162a91a3.jpg',title:'Dark Accent Wall',desc:'A moody feature wall creates dramatic depth behind a sculptural bed frame.',budget:'Rs 65,000 - 1,20,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bed-modern'})">
+      <img src="https://i.pinimg.com/736x/00/a0/e1/00a0e1a8fa72668988248594162a91a3.jpg" alt="Dark Accent Wall" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BD-MOD-002" onclick="event.stopPropagation();toggleSaved(this,{id:'BD-MOD-002',img:'https://i.pinimg.com/736x/00/a0/e1/00a0e1a8fa72668988248594162a91a3.jpg',title:'Dark Accent Wall',desc:'A moody feature wall creates dramatic depth behind a sculptural bed frame.',budget:'Rs 65,000 - 1,20,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bed-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Dark Accent Wall</div>
+      <div class="card-desc">A moody feature wall creates dramatic depth behind a sculptural bed frame.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 65,000 - 1,20,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/karan-verma" target="_blank">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#bedroom" class="back-btn">&#8592; Back</a>
+</section>
+<section id="bed-cozy" class="panel">
+  <span class="page-eyebrow">Bedroom &mdash; Cozy</span>
+  <h2 class="page-title">Cozy Bedroom.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-bed-cozy">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BD-COZ-001',img:'https://i.pinimg.com/736x/5a/f1/01/5af1015e0db94b655872e4b052e8acd3.jpg',title:'Layered Warmth',desc:'Chunky knit throws and layered pillows turn the bed into a haven.',budget:'Rs 55,000 - 1,10,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'bed-cozy'})">
+      <img src="https://i.pinimg.com/736x/5a/f1/01/5af1015e0db94b655872e4b052e8acd3.jpg" alt="Layered Warmth" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BD-COZ-001" onclick="event.stopPropagation();toggleSaved(this,{id:'BD-COZ-001',img:'https://i.pinimg.com/736x/5a/f1/01/5af1015e0db94b655872e4b052e8acd3.jpg',title:'Layered Warmth',desc:'Chunky knit throws and layered pillows turn the bed into a haven.',budget:'Rs 55,000 - 1,10,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'bed-cozy'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Layered Warmth</div>
+      <div class="card-desc">Chunky knit throws and layered pillows turn the bed into a haven.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 55,000 - 1,10,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/arjun-mehta" target="_blank">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BD-COZ-002',img:'https://i.pinimg.com/736x/b6/49/7b/b6497b2a066cf3a57eff411319a34c74.jpg',title:'Amber Glow',desc:'Warm amber lighting and earthy tones wrap the room in evening comfort.',budget:'Rs 40,000 - 75,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'bed-cozy'})">
+      <img src="https://i.pinimg.com/736x/b6/49/7b/b6497b2a066cf3a57eff411319a34c74.jpg" alt="Amber Glow" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BD-COZ-002" onclick="event.stopPropagation();toggleSaved(this,{id:'BD-COZ-002',img:'https://i.pinimg.com/736x/b6/49/7b/b6497b2a066cf3a57eff411319a34c74.jpg',title:'Amber Glow',desc:'Warm amber lighting and earthy tones wrap the room in evening comfort.',budget:'Rs 40,000 - 75,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'bed-cozy'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Amber Glow</div>
+      <div class="card-desc">Warm amber lighting and earthy tones wrap the room in evening comfort.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 40,000 - 75,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/priya-nair" target="_blank">Priya Nair</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#bedroom" class="back-btn">&#8592; Back</a>
+</section>
+<section id="bed-luxury" class="panel">
+  <span class="page-eyebrow">Bedroom &mdash; Luxury</span>
+  <h2 class="page-title">Luxury Bedroom.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-bed-luxury">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BD-LUX-001',img:'https://i.pinimg.com/736x/aa/6a/80/aa6a80a98b82c6d43c825a36cfd184c0.jpg',title:'Hotel Suite',desc:'Five-star hotel proportions brought home with bespoke upholstery and symmetry.',budget:'Rs 50,000 - 1,00,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'bed-luxury'})">
+      <img src="https://i.pinimg.com/736x/aa/6a/80/aa6a80a98b82c6d43c825a36cfd184c0.jpg" alt="Hotel Suite" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BD-LUX-001" onclick="event.stopPropagation();toggleSaved(this,{id:'BD-LUX-001',img:'https://i.pinimg.com/736x/aa/6a/80/aa6a80a98b82c6d43c825a36cfd184c0.jpg',title:'Hotel Suite',desc:'Five-star hotel proportions brought home with bespoke upholstery and symmetry.',budget:'Rs 50,000 - 1,00,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'bed-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Hotel Suite</div>
+      <div class="card-desc">Five-star hotel proportions brought home with bespoke upholstery and symmetry.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 50,000 - 1,00,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/riya-sharma" target="_blank">Riya Sharma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BD-LUX-002',img:'https://i.pinimg.com/736x/44/1c/5e/441c5e6353b13a540355900aa313b16f.jpg',title:'Canopy Drama',desc:'A ceiling-height canopy bed commands the room with majestic presence.',budget:'Rs 45,000 - 85,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'bed-luxury'})">
+      <img src="https://i.pinimg.com/736x/44/1c/5e/441c5e6353b13a540355900aa313b16f.jpg" alt="Canopy Drama" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BD-LUX-002" onclick="event.stopPropagation();toggleSaved(this,{id:'BD-LUX-002',img:'https://i.pinimg.com/736x/44/1c/5e/441c5e6353b13a540355900aa313b16f.jpg',title:'Canopy Drama',desc:'A ceiling-height canopy bed commands the room with majestic presence.',budget:'Rs 45,000 - 85,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'bed-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Canopy Drama</div>
+      <div class="card-desc">A ceiling-height canopy bed commands the room with majestic presence.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 45,000 - 85,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/arjun-mehta" target="_blank">Arjun Mehta</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#bedroom" class="back-btn">&#8592; Back</a>
+</section>
+
+<!-- KITCHEN -->
+<section id="kitchen" class="panel">
+  <span class="page-eyebrow">Room 03</span>
+  <h2 class="page-title">Kitchen.</h2>
+  <div class="style-btns">
+    <a href="#kit-modern" class="btn-style">Modern</a>
+    <a href="#kit-classic" class="btn-style">Classic</a>
+    <a href="#kit-minimal" class="btn-style">Minimal</a>
+  </div>
+  <a href="#home" class="back-btn">&#8592; Back</a>
+</section>
+<section id="kit-modern" class="panel">
+  <span class="page-eyebrow">Kitchen &mdash; Modern</span>
+  <h2 class="page-title">Modern Kitchen.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-kit-modern">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'KT-MOD-001',img:'https://i.pinimg.com/1200x/4f/a8/99/4fa8999a3f7d8d36b154a28fe8295ef0.jpg',title:'Handleless Slab',desc:'Seamless flat-front cabinetry in matte finishes for a sleek culinary environment.',budget:'Rs 8,000 - 18,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'kit-modern'})">
+      <img src="https://i.pinimg.com/1200x/4f/a8/99/4fa8999a3f7d8d36b154a28fe8295ef0.jpg" alt="Handleless Slab" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="KT-MOD-001" onclick="event.stopPropagation();toggleSaved(this,{id:'KT-MOD-001',img:'https://i.pinimg.com/1200x/4f/a8/99/4fa8999a3f7d8d36b154a28fe8295ef0.jpg',title:'Handleless Slab',desc:'Seamless flat-front cabinetry in matte finishes for a sleek culinary environment.',budget:'Rs 8,000 - 18,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'kit-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Handleless Slab</div>
+      <div class="card-desc">Seamless flat-front cabinetry in matte finishes for a sleek culinary environment.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 8,000 - 18,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/anika-singh" target="_blank">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'KT-MOD-002',img:'https://i.pinimg.com/1200x/77/b8/97/77b897abb35a4b0058bb40265fc52866.jpg',title:'Island Living',desc:'A generous kitchen island doubles as dining bar and prep space.',budget:'Rs 12,000 - 28,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'kit-modern'})">
+      <img src="https://i.pinimg.com/1200x/77/b8/97/77b897abb35a4b0058bb40265fc52866.jpg" alt="Island Living" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="KT-MOD-002" onclick="event.stopPropagation();toggleSaved(this,{id:'KT-MOD-002',img:'https://i.pinimg.com/1200x/77/b8/97/77b897abb35a4b0058bb40265fc52866.jpg',title:'Island Living',desc:'A generous kitchen island doubles as dining bar and prep space.',budget:'Rs 12,000 - 28,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'kit-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Island Living</div>
+      <div class="card-desc">A generous kitchen island doubles as dining bar and prep space.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 12,000 - 28,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/riya-sharma" target="_blank">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#kitchen" class="back-btn">&#8592; Back</a>
+</section>
+<section id="kit-classic" class="panel">
+  <span class="page-eyebrow">Kitchen &mdash; Classic</span>
+  <h2 class="page-title">Classic Kitchen.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-kit-classic">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'KT-CLS-001',img:'https://i.pinimg.com/736x/fe/91/8b/fe918b8246b5ede8b12fafe4e5af4ccf.jpg',title:'Shaker Whites',desc:'Traditional shaker-style cabinetry in crisp white with stone worktops.',budget:'Rs 35,000 - 75,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'kit-classic'})">
+      <img src="https://i.pinimg.com/736x/fe/91/8b/fe918b8246b5ede8b12fafe4e5af4ccf.jpg" alt="Shaker Whites" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="KT-CLS-001" onclick="event.stopPropagation();toggleSaved(this,{id:'KT-CLS-001',img:'https://i.pinimg.com/736x/fe/91/8b/fe918b8246b5ede8b12fafe4e5af4ccf.jpg',title:'Shaker Whites',desc:'Traditional shaker-style cabinetry in crisp white with stone worktops.',budget:'Rs 35,000 - 75,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'kit-classic'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Shaker Whites</div>
+      <div class="card-desc">Traditional shaker-style cabinetry in crisp white with stone worktops.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 35,000 - 75,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/anika-singh" target="_blank">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'KT-CLS-002',img:'https://i.pinimg.com/1200x/1d/83/9b/1d839b9ac030b0a6a6ab6c10c1d69c88.jpg',title:'Farmhouse Sink',desc:'A Belfast sink and vintage tap set give this kitchen an heirloom quality.',budget:'Rs 45,000 - 95,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'kit-classic'})">
+      <img src="https://i.pinimg.com/1200x/1d/83/9b/1d839b9ac030b0a6a6ab6c10c1d69c88.jpg" alt="Farmhouse Sink" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="KT-CLS-002" onclick="event.stopPropagation();toggleSaved(this,{id:'KT-CLS-002',img:'https://i.pinimg.com/1200x/1d/83/9b/1d839b9ac030b0a6a6ab6c10c1d69c88.jpg',title:'Farmhouse Sink',desc:'A Belfast sink and vintage tap set give this kitchen an heirloom quality.',budget:'Rs 45,000 - 95,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'kit-classic'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Farmhouse Sink</div>
+      <div class="card-desc">A Belfast sink and vintage tap set give this kitchen an heirloom quality.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 45,000 - 95,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/riya-sharma" target="_blank">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#kitchen" class="back-btn">&#8592; Back</a>
+</section>
+<section id="kit-minimal" class="panel">
+  <span class="page-eyebrow">Kitchen &mdash; Minimal</span>
+  <h2 class="page-title">Minimal Kitchen.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-kit-minimal">
+   <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'KT-MIN-001',img:'https://i.pinimg.com/1200x/b0/0d/8b/b00d8bef45550c2ac16a11ca7915da92.jpg',title:'Invisible Kitchen',desc:'Integrated appliances and handleless cabinetry blur into the walls.',budget:'Rs 20,000 - 40,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'kit-minimal'})">
+      <img src="https://i.pinimg.com/1200x/b0/0d/8b/b00d8bef45550c2ac16a11ca7915da92.jpg" alt="Invisible Kitchen" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="KT-MIN-001" onclick="event.stopPropagation();toggleSaved(this,{id:'KT-MIN-001',img:'https://i.pinimg.com/1200x/b0/0d/8b/b00d8bef45550c2ac16a11ca7915da92.jpg',title:'Invisible Kitchen',desc:'Integrated appliances and handleless cabinetry blur into the walls.',budget:'Rs 20,000 - 40,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'kit-minimal'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Invisible Kitchen</div>
+      <div class="card-desc">Integrated appliances and handleless cabinetry blur into the walls.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 20,000 - 40,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/priya-nair" target="_blank">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'KT-MIN-002',img:'https://i.pinimg.com/736x/6b/55/b3/6b55b3a62797be87e9ee7ca1da699d24.jpg',title:'Single Run',desc:'A single streamlined counter keeps everything in perfect linear order.',budget:'Rs 15,000 - 30,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'kit-minimal'})">
+      <img src="https://i.pinimg.com/736x/6b/55/b3/6b55b3a62797be87e9ee7ca1da699d24.jpg" alt="Single Run" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="KT-MIN-002" onclick="event.stopPropagation();toggleSaved(this,{id:'KT-MIN-002',img:'https://i.pinimg.com/736x/6b/55/b3/6b55b3a62797be87e9ee7ca1da699d24.jpg',title:'Single Run',desc:'A single streamlined counter keeps everything in perfect linear order.',budget:'Rs 15,000 - 30,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'kit-minimal'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Single Run</div>
+      <div class="card-desc">A single streamlined counter keeps everything in perfect linear order.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 15,000 - 30,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/karan-verma" target="_blank">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#kitchen" class="back-btn">&#8592; Back</a>
+</section>
+
+<!-- DINING -->
+<section id="dining" class="panel">
+  <span class="page-eyebrow">Room 04</span>
+  <h2 class="page-title">Dining.</h2>
+  <div class="style-btns">
+    <a href="#din-modern" class="btn-style">Modern</a>
+    <a href="#din-elegant" class="btn-style">Elegant</a>
+    <a href="#din-luxury" class="btn-style">Luxury</a>
+  </div>
+  <a href="#home" class="back-btn">&#8592; Back</a>
+</section>
+<section id="din-modern" class="panel">
+  <span class="page-eyebrow">Dining &mdash; Modern</span>
+  <h2 class="page-title">Modern Dining.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-din-modern">
+   <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'DN-MOD-001',img:'https://i.pinimg.com/736x/22/e9/22/22e922640c7450433cb3a61d41e8655c.jpg',title:'Statement Table',desc:'An organic-form dining table becomes the sculptural centerpiece of the room.',budget:'Rs 18,000 - 35,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'din-modern'})">
+      <img src="https://i.pinimg.com/736x/22/e9/22/22e922640c7450433cb3a61d41e8655c.jpg" alt="Statement Table" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="DN-MOD-001" onclick="event.stopPropagation();toggleSaved(this,{id:'DN-MOD-001',img:'https://i.pinimg.com/736x/22/e9/22/22e922640c7450433cb3a61d41e8655c.jpg',title:'Statement Table',desc:'An organic-form dining table becomes the sculptural centerpiece of the room.',budget:'Rs 18,000 - 35,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'din-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Statement Table</div>
+      <div class="card-desc">An organic-form dining table becomes the sculptural centerpiece of the room.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 18,000 - 35,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/arjun-mehta" target="_blank">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'DN-MOD-002',img:'https://i.pinimg.com/736x/5c/af/a7/5cafa7f3df65163b65fee3c9aa7aa14d.jpg',title:'Mixed Seating',desc:'Bench on one side, chairs on the other - relaxed modern dining energy.',budget:'Rs 12,000 - 25,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'din-modern'})">
+      <img src="https://i.pinimg.com/736x/5c/af/a7/5cafa7f3df65163b65fee3c9aa7aa14d.jpg" alt="Mixed Seating" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="DN-MOD-002" onclick="event.stopPropagation();toggleSaved(this,{id:'DN-MOD-002',img:'https://i.pinimg.com/736x/5c/af/a7/5cafa7f3df65163b65fee3c9aa7aa14d.jpg',title:'Mixed Seating',desc:'Bench on one side, chairs on the other - relaxed modern dining energy.',budget:'Rs 12,000 - 25,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'din-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Mixed Seating</div>
+      <div class="card-desc">Bench on one side, chairs on the other - relaxed modern dining energy.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 12,000 - 25,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/anika-singh" target="_blank">Anika Singh</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#dining" class="back-btn">&#8592; Back</a>
+</section>
+<section id="din-elegant" class="panel">
+  <span class="page-eyebrow">Dining &mdash; Elegant</span>
+  <h2 class="page-title">Elegant Dining.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-din-elegant">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'DN-ELG-001',img:'https://i.pinimg.com/736x/17/41/39/1741398487c99b138be855a3d4ef86dd.jpg',title:'Candlelit Table',desc:'Fine linen, crystal glassware and candles set a refined evening scene.',budget:'Rs 25,000 - 50,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'din-elegant'})">
+      <img src="https://i.pinimg.com/736x/17/41/39/1741398487c99b138be855a3d4ef86dd.jpg" alt="Candlelit Table" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="DN-ELG-001" onclick="event.stopPropagation();toggleSaved(this,{id:'DN-ELG-001',img:'https://i.pinimg.com/736x/17/41/39/1741398487c99b138be855a3d4ef86dd.jpg',title:'Candlelit Table',desc:'Fine linen, crystal glassware and candles set a refined evening scene.',budget:'Rs 25,000 - 50,000',designer:'Priya Nair',designerUrl:'https://archmind.com/designer/priya-nair',category:'din-elegant'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Candlelit Table</div>
+      <div class="card-desc">Fine linen, crystal glassware and candles set a refined evening scene.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 25,000 - 50,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/priya-nair" target="_blank">Priya Nair</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'DN-ELG-002',img:'https://i.pinimg.com/1200x/b2/8c/82/b28c825622a3f0bfad01949f0d094d0b.jpg',title:'Upholstered Chairs',desc:'Fully upholstered dining chairs in rich fabric elevate every meal.',budget:'Rs 30,000 - 60,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'din-elegant'})">
+      <img src="https://i.pinimg.com/1200x/b2/8c/82/b28c825622a3f0bfad01949f0d094d0b.jpg" alt="Upholstered Chairs" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="DN-ELG-002" onclick="event.stopPropagation();toggleSaved(this,{id:'DN-ELG-002',img:'https://i.pinimg.com/1200x/b2/8c/82/b28c825622a3f0bfad01949f0d094d0b.jpg',title:'Upholstered Chairs',desc:'Fully upholstered dining chairs in rich fabric elevate every meal.',budget:'Rs 30,000 - 60,000',designer:'Riya Sharma',designerUrl:'https://archmind.com/designer/riya-sharma',category:'din-elegant'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Upholstered Chairs</div>
+      <div class="card-desc">Fully upholstered dining chairs in rich fabric elevate every meal.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 30,000 - 60,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/riya-sharma" target="_blank">Riya Sharma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#dining" class="back-btn">&#8592; Back</a>
+</section>
+<section id="din-luxury" class="panel">
+  <span class="page-eyebrow">Dining &mdash; Luxury</span>
+  <h2 class="page-title">Luxury Dining.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-din-luxury">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'DN-LUX-001',img:'https://i.pinimg.com/736x/e4/1b/fe/e41bfe4fadb934c99f34c15b7e0cfe63.jpg',title:'Grand Dining Hall',desc:'A long formal table under a cascading chandelier - dining as ceremony.',budget:'Rs 15,000 - 40,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'din-luxury'})">
+      <img src="https://i.pinimg.com/736x/e4/1b/fe/e41bfe4fadb934c99f34c15b7e0cfe63.jpg" alt="Grand Dining Hall" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="DN-LUX-001" onclick="event.stopPropagation();toggleSaved(this,{id:'DN-LUX-001',img:'https://i.pinimg.com/736x/e4/1b/fe/e41bfe4fadb934c99f34c15b7e0cfe63.jpg',title:'Grand Dining Hall',desc:'A long formal table under a cascading chandelier - dining as ceremony.',budget:'Rs 15,000 - 40,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'din-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Grand Dining Hall</div>
+      <div class="card-desc">A long formal table under a cascading chandelier - dining as ceremony.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 15,000 - 40,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/arjun-mehta" target="_blank">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'DN-LUX-002',img:'https://i.pinimg.com/1200x/58/80/65/5880658a5e85b8d69ed0821fa1320845.jpg',title:'Marble and Brass',desc:'Marble-top table with brass-trimmed chairs for lavish family gatherings.',budget:'Rs 40,000 - 80,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'din-luxury'})">
+      <img src="https://i.pinimg.com/1200x/58/80/65/5880658a5e85b8d69ed0821fa1320845.jpg" alt="Marble and Brass" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="DN-LUX-002" onclick="event.stopPropagation();toggleSaved(this,{id:'DN-LUX-002',img:'https://i.pinimg.com/1200x/58/80/65/5880658a5e85b8d69ed0821fa1320845.jpg',title:'Marble and Brass',desc:'Marble-top table with brass-trimmed chairs for lavish family gatherings.',budget:'Rs 40,000 - 80,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'din-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Marble and Brass</div>
+      <div class="card-desc">Marble-top table with brass-trimmed chairs for lavish family gatherings.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 40,000 - 80,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/karan-verma" target="_blank">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#dining" class="back-btn">&#8592; Back</a>
+</section>
+
+<!-- BATHROOM -->
+<section id="bathroom" class="panel">
+  <span class="page-eyebrow">Room 05</span>
+  <h2 class="page-title">Bathroom.</h2>
+  <div class="style-btns">
+    <a href="#bath-modern" class="btn-style">Modern</a>
+    <a href="#bath-classic" class="btn-style">Classic</a>
+    <a href="#bath-luxury" class="btn-style">Luxury</a>
+  </div>
+  <a href="#home" class="back-btn">&#8592; Back</a>
+</section>
+<section id="bath-modern" class="panel">
+  <span class="page-eyebrow">Bathroom &mdash; Modern</span>
+  <h2 class="page-title">Modern Bathroom.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-bath-modern">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BT-MOD-001',img:'https://i.pinimg.com/1200x/4a/8a/0e/4a8a0ea681dfae473bcd9b2f12e77173.jpg',title:'Spa Shower',desc:'A frameless walk-in shower with rain head for daily spa indulgence.',budget:'Rs 5,000 - 14,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'bath-modern'})">
+      <img src="https://i.pinimg.com/1200x/4a/8a/0e/4a8a0ea681dfae473bcd9b2f12e77173.jpg" alt="Spa Shower" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BT-MOD-001" onclick="event.stopPropagation();toggleSaved(this,{id:'BT-MOD-001',img:'https://i.pinimg.com/1200x/4a/8a/0e/4a8a0ea681dfae473bcd9b2f12e77173.jpg',title:'Spa Shower',desc:'A frameless walk-in shower with rain head for daily spa indulgence.',budget:'Rs 5,000 - 14,000',designer:'Arjun Mehta',designerUrl:'https://archmind.com/designer/arjun-mehta',category:'bath-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Spa Shower</div>
+      <div class="card-desc">A frameless walk-in shower with rain head for daily spa indulgence.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 5,000 - 14,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/arjun-mehta" target="_blank">Arjun Mehta</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BT-MOD-002',img:'https://i.pinimg.com/736x/9f/f6/fe/9ff6febff8a7eee496c540e2e35449bd.jpg',title:'Floating Vanity',desc:'Wall-hung vanity with integrated lighting keeps the floor visual-clear.',budget:'Rs 12,000 - 30,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bath-modern'})">
+      <img src="https://i.pinimg.com/736x/9f/f6/fe/9ff6febff8a7eee496c540e2e35449bd.jpg" alt="Floating Vanity" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BT-MOD-002" onclick="event.stopPropagation();toggleSaved(this,{id:'BT-MOD-002',img:'https://i.pinimg.com/736x/9f/f6/fe/9ff6febff8a7eee496c540e2e35449bd.jpg',title:'Floating Vanity',desc:'Wall-hung vanity with integrated lighting keeps the floor visual-clear.',budget:'Rs 12,000 - 30,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bath-modern'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Floating Vanity</div>
+      <div class="card-desc">Wall-hung vanity with integrated lighting keeps the floor visual-clear.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 12,000 - 30,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/karan-verma" target="_blank">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#bathroom" class="back-btn">&#8592; Back</a>
+</section>
+<section id="bath-classic" class="panel">
+  <span class="page-eyebrow">Bathroom &mdash; Classic</span>
+  <h2 class="page-title">Classic Bathroom.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-bath-classic">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BT-CLS-001',img:'https://i.pinimg.com/1200x/43/2a/e2/432ae2ce4f385a2d3bdb7ef567dbe1c6.jpg',title:'Roll-Top Bath',desc:'A freestanding roll-top bath in gleaming white - the classic centrepiece.',budget:'Rs 4,000 - 10,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'bath-classic'})">
+      <img src="https://i.pinimg.com/1200x/43/2a/e2/432ae2ce4f385a2d3bdb7ef567dbe1c6.jpg" alt="Roll-Top Bath" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BT-CLS-001" onclick="event.stopPropagation();toggleSaved(this,{id:'BT-CLS-001',img:'https://i.pinimg.com/1200x/43/2a/e2/432ae2ce4f385a2d3bdb7ef567dbe1c6.jpg',title:'Roll-Top Bath',desc:'A freestanding roll-top bath in gleaming white - the classic centrepiece.',budget:'Rs 4,000 - 10,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'bath-classic'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Roll-Top Bath</div>
+      <div class="card-desc">A freestanding roll-top bath in gleaming white - the classic centrepiece.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 4,000 - 10,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/anika-singh" target="_blank">Anika Singh</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BT-CLS-002',img:'https://i.pinimg.com/736x/f0/22/54/f022547336f94b0a344314878a2ed2e8.jpg',title:'Subway Tile',desc:'White subway tiles with dark grout and pedestal basin - timeless purity.',budget:'Rs 3,000 - 8,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bath-classic'})">
+      <img src="https://i.pinimg.com/736x/f0/22/54/f022547336f94b0a344314878a2ed2e8.jpg" alt="Subway Tile" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BT-CLS-002" onclick="event.stopPropagation();toggleSaved(this,{id:'BT-CLS-002',img:'https://i.pinimg.com/736x/f0/22/54/f022547336f94b0a344314878a2ed2e8.jpg',title:'Subway Tile',desc:'White subway tiles with dark grout and pedestal basin - timeless purity.',budget:'Rs 3,000 - 8,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bath-classic'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Subway Tile</div>
+      <div class="card-desc">White subway tiles with dark grout and pedestal basin - timeless purity.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 3,000 - 8,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/karan-verma" target="_blank">Karan Verma</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#bathroom" class="back-btn">&#8592; Back</a>
+</section>
+<section id="bath-luxury" class="panel">
+  <span class="page-eyebrow">Bathroom &mdash; Luxury</span>
+  <h2 class="page-title">Luxury Bathroom.</h2>
+  <div class="section-divider"><span>designs</span></div>
+  <div class="option-grid" id="grid-bath-luxury">
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BT-LUX-001',img:'https://i.pinimg.com/1200x/0e/df/d3/0edfd36994818abbfa170d231f108677.jpg',title:'Infinity Soaker',desc:'A panoramic freestanding soaker tub positioned before floor-to-ceiling glazing.',budget:'Rs 15,000 - 30,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bath-luxury'})">
+      <img src="https://i.pinimg.com/1200x/0e/df/d3/0edfd36994818abbfa170d231f108677.jpg" alt="Infinity Soaker" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BT-LUX-001" onclick="event.stopPropagation();toggleSaved(this,{id:'BT-LUX-001',img:'https://i.pinimg.com/1200x/0e/df/d3/0edfd36994818abbfa170d231f108677.jpg',title:'Infinity Soaker',desc:'A panoramic freestanding soaker tub positioned before floor-to-ceiling glazing.',budget:'Rs 15,000 - 30,000',designer:'Karan Verma',designerUrl:'https://archmind.com/designer/karan-verma',category:'bath-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Infinity Soaker</div>
+      <div class="card-desc">A panoramic freestanding soaker tub positioned before floor-to-ceiling glazing.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 15,000 - 30,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/karan-verma" target="_blank">Karan Verma</a></div>
+    </div>
+  </div>
+  <div class="option-card">
+    <div class="card-img-wrap" onclick="openLightbox({id:'BT-LUX-002',img:'https://i.pinimg.com/736x/1d/3b/a5/1d3ba5b99513d0c26590b7353a286f7f.jpg',title:'Marble Sanctuary',desc:'Book-matched marble on every surface for an enveloping luxury experience.',budget:'Rs 8,000 - 18,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'bath-luxury'})">
+      <img src="https://i.pinimg.com/736x/1d/3b/a5/1d3ba5b99513d0c26590b7353a286f7f.jpg" alt="Marble Sanctuary" loading="lazy">
+      <button class="card-heart" aria-label="Save design" data-id="BT-LUX-002" onclick="event.stopPropagation();toggleSaved(this,{id:'BT-LUX-002',img:'https://i.pinimg.com/736x/1d/3b/a5/1d3ba5b99513d0c26590b7353a286f7f.jpg',title:'Marble Sanctuary',desc:'Book-matched marble on every surface for an enveloping luxury experience.',budget:'Rs 8,000 - 18,000',designer:'Anika Singh',designerUrl:'https://archmind.com/designer/anika-singh',category:'bath-luxury'})"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Marble Sanctuary</div>
+      <div class="card-desc">Book-matched marble on every surface for an enveloping luxury experience.</div>
+      <div class="card-budget"><span class="budget-label">Budget</span>Rs 8,000 - 18,000</div>
+      <div class="card-divider"></div>
+      <div class="card-designer"><span class="designer-dot"></span><a href="https://archmind.com/designer/anika-singh" target="_blank">Anika Singh</a></div>
+    </div>
+  </div>
+</div>
+  <a href="#bathroom" class="back-btn">&#8592; Back</a>
+</section>
+
+<!-- ARCHIVE -->
+<section id="archive">
+  <span class="page-eyebrow">Saved Designs</span>
+  <h2 class="page-title">Your Archive.</h2>
+  <p class="page-sub">Designs you've hearted &mdash; collected here for easy reference.</p>
+  <div id="archive-grid" class="option-grid"></div>
+  <div id="archive-empty" class="archive-empty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <p>No saved designs yet. Browse and tap &#9825; to save your favourites.</p>
+  </div>
+  <a href="#home" class="back-btn" style="margin-top:40px">&#8592; Browse Designs</a>
+</section>
+
+<footer>&#169; 2026 Dream Home Designer &nbsp;&middot;&nbsp; Curated room styles for every vision &nbsp;&middot;&nbsp; <a href="mailto:dreamhome@gmail.com" style="color:var(--p);text-decoration:none;">dreamhome@gmail.com</a></footer>
+
+
+
+<script src="archmind.js"></script>
+</body>
+</html>

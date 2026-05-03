@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Services | ArchMind</title>
+    <link rel="stylesheet" href="archmind.css">
+    <style>
+        /* ── REQUEST PAGE SPECIFIC ── */
+        .req-page {
+            min-height: 100vh;
+            background: var(--bg);
+            padding-bottom: 80px;
+        }
+
+        /* Header */
+        .req-header {
+            position: sticky; top: 0; z-index: 100;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 52px;
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 0.5px solid var(--border);
+        }
+        .req-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px; letter-spacing: 5px; color: var(--p);
+            text-decoration: none;
+        }
+        .req-logo span { font-style: italic; }
+        .req-nav { display: flex; gap: 6px; align-items: center; }
+        .req-nav a {
+            color: var(--muted); text-decoration: none;
+            font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+            padding: 8px 16px; border-radius: 6px;
+            border: 0.5px solid transparent; transition: all 0.25s;
+        }
+        .req-nav a:hover { color: var(--text); border-color: var(--border); }
+        .req-nav a.active { color: var(--p); border-color: var(--p-border); background: var(--p-dim); }
+
+        /* Hero strip */
+        .req-hero {
+            padding: 64px 52px 48px;
+            border-bottom: 0.5px solid var(--border);
+            position: relative; overflow: hidden;
+        }
+        .req-hero::before {
+            content: "";
+            position: absolute; top: -80px; right: -80px;
+            width: 400px; height: 400px; border-radius: 50%;
+            background: rgba(198,167,228,0.06);
+            filter: blur(80px); pointer-events: none;
+        }
+        .req-eyebrow {
+            font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--p); display: flex; align-items: center; gap: 10px;
+            margin-bottom: 14px;
+        }
+        .req-eyebrow::before { content: ""; width: 24px; height: 0.5px; background: var(--p); }
+        .req-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 5vw, 56px); font-weight: 300;
+            line-height: 1.05; letter-spacing: -1px; margin-bottom: 12px;
+        }
+        .req-hero p {
+            font-size: 13px; color: var(--muted); max-width: 480px; line-height: 1.8;
+        }
+
+        /* Service type selector */
+        .service-selector {
+            display: flex; gap: 16px;
+            padding: 40px 52px 0;
+            max-width: 900px;
+        }
+        .svc-tab {
+            flex: 1; padding: 24px 28px;
+            border-radius: 14px; cursor: pointer;
+            border: 0.5px solid var(--border);
+            background: var(--bg-card);
+            transition: all 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .svc-tab::before {
+            content: ""; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(198,167,228,0.08), transparent);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .svc-tab:hover::before, .svc-tab.active::before { opacity: 1; }
+        .svc-tab.active {
+            border-color: var(--p-border);
+            box-shadow: 0 0 0 0.5px var(--p-border), 0 12px 40px rgba(198,167,228,0.1);
+        }
+        .svc-tab-icon {
+            font-size: 24px; margin-bottom: 12px; display: block;
+        }
+        .svc-tab-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 400; color: var(--text);
+            margin-bottom: 6px;
+        }
+        .svc-tab.active .svc-tab-title { color: var(--p); }
+        .svc-tab-desc {
+            font-size: 11px; color: var(--muted); line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+        .svc-tab-badge {
+            position: absolute; top: 16px; right: 16px;
+            font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+            color: var(--p); background: var(--p-dim);
+            border: 0.5px solid var(--p-border); border-radius: 4px;
+            padding: 3px 8px; opacity: 0; transition: opacity 0.3s;
+        }
+        .svc-tab.active .svc-tab-badge { opacity: 1; }
+
+        /* Form container */
+        .req-form-wrap {
+            padding: 40px 52px;
+            max-width: 900px;
+        }
+
+        /* Form panels */
+        .form-panel { display: none; }
+        .form-panel.active { display: block; animation: fadeUp 0.4s ease; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section label */
+        .form-section-label {
+            font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--p); display: flex; align-items: center; gap: 12px;
+            margin: 36px 0 20px;
+        }
+        .form-section-label::after {
+            content: ""; flex: 1; height: 0.5px; background: var(--border);
+        }
+
+        /* Form group */
+        .fg {
+            margin-bottom: 20px;
+        }
+        .fg label {
+            display: block;
+            font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--muted); margin-bottom: 8px;
+        }
+        .fg input,
+        .fg textarea,
+        .fg select {
+            width: 100%;
+            background: rgba(255,255,255,0.03);
+            border: 0.5px solid var(--border);
+            border-radius: 10px;
+            padding: 13px 16px;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            -webkit-appearance: none; appearance: none;
+        }
+        .fg select { background-color: #111; }
+        .fg select option { background: #1a1a1a; }
+        .fg input::placeholder,
+        .fg textarea::placeholder { color: var(--muted); font-size: 12px; }
+        .fg input:focus,
+        .fg textarea:focus,
+        .fg select:focus {
+            border-color: var(--p-border);
+            background: rgba(198,167,228,0.04);
+        }
+        .fg textarea { resize: vertical; min-height: 90px; line-height: 1.65; }
+
+        /* Two-col grid */
+        .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .fg-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+        /* Budget row */
+        .budget-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        /* Pill group */
+        .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+        .pill-item {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 9px 18px; border-radius: 30px;
+            border: 0.5px solid var(--border);
+            background: rgba(255,255,255,0.02);
+            color: var(--muted); font-size: 12px; letter-spacing: 0.5px;
+            cursor: pointer; transition: all 0.2s; user-select: none;
+        }
+        .pill-item input { display: none; }
+        .pill-item:has(input:checked),
+        .pill-item.selected {
+            border-color: var(--p-border);
+            background: var(--p-dim);
+            color: var(--p);
+        }
+        .pill-item:hover { border-color: rgba(198,167,228,0.2); color: var(--text); }
+
+        /* Checkbox pill */
+        .check-pill {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 9px 18px; border-radius: 30px;
+            border: 0.5px solid var(--border);
+            background: rgba(255,255,255,0.02);
+            color: var(--muted); font-size: 12px;
+            cursor: pointer; transition: all 0.2s; user-select: none;
+        }
+        .check-pill input { display: none; }
+        .check-pill:has(input:checked) {
+            border-color: var(--p-border);
+            background: var(--p-dim);
+            color: var(--p);
+        }
+
+        /* File upload */
+        .file-zone {
+            width: 100%; padding: 28px;
+            border: 1.5px dashed rgba(198,167,228,0.25);
+            border-radius: 12px;
+            background: rgba(198,167,228,0.03);
+            display: flex; flex-direction: column; align-items: center;
+            gap: 8px; cursor: pointer; transition: all 0.25s;
+            position: relative;
+        }
+        .file-zone:hover {
+            border-color: var(--p-border);
+            background: rgba(198,167,228,0.07);
+        }
+        .file-zone input[type="file"] {
+            position: absolute; inset: 0; opacity: 0; cursor: pointer;
+            width: 100%; height: 100%;
+        }
+        .file-zone-icon { font-size: 26px; opacity: 0.5; }
+        .file-zone-text {
+            font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+            color: var(--muted);
+        }
+        .file-zone-sub { font-size: 10px; color: var(--muted); opacity: 0.6; }
+
+        /* Architect selector */
+        .arch-selector-wrap {
+            background: rgba(255,255,255,0.02);
+            border: 0.5px solid var(--border);
+            border-radius: 12px; padding: 20px;
+            margin-top: 12px;
+        }
+        .arch-search {
+            width: 100%; background: rgba(255,255,255,0.04);
+            border: 0.5px solid var(--border); border-radius: 8px;
+            padding: 11px 14px; color: var(--text);
+            font-family: 'DM Sans', sans-serif; font-size: 13px;
+            outline: none; margin-bottom: 14px; transition: border-color 0.2s;
+        }
+        .arch-search:focus { border-color: var(--p-border); }
+        .arch-list {
+            max-height: 260px; overflow-y: auto;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .arch-card {
+            display: flex; align-items: center; gap: 14px;
+            padding: 12px 14px; border-radius: 10px;
+            border: 0.5px solid var(--border);
+            background: rgba(255,255,255,0.02);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .arch-card:has(input:checked) {
+            border-color: var(--p-border);
+            background: var(--p-dim);
+        }
+        .arch-card input { display: none; }
+        .arch-card img {
+            width: 38px; height: 38px; border-radius: 50%;
+            object-fit: cover; border: 0.5px solid var(--border);
+        }
+        .arch-card .arch-name {
+            font-size: 13px; color: var(--text); margin-bottom: 2px;
+        }
+        .arch-card .arch-meta {
+            font-size: 11px; color: var(--muted);
+        }
+        .arch-card .rating {
+            font-size: 11px; color: var(--p); margin-left: 6px;
+        }
+
+        /* Urgency indicator */
+        .urgency-note {
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 14px; border-radius: 8px;
+            background: rgba(248,193,70,0.07);
+            border: 0.5px solid rgba(248,193,70,0.2);
+            font-size: 11px; color: rgba(248,193,70,0.8);
+            margin-top: 10px; display: none;
+        }
+        .urgency-note.show { display: flex; }
+
+        /* Submit button */
+        .btn-submit-req {
+            width: 100%; padding: 16px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(198,167,228,0.22), rgba(198,167,228,0.1));
+            border: 0.5px solid var(--p-border);
+            color: var(--p);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase;
+            cursor: pointer; transition: all 0.25s;
+            margin-top: 8px;
+        }
+        .btn-submit-req:hover {
+            background: rgba(198,167,228,0.28);
+            border-color: var(--p);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(198,167,228,0.15);
+        }
+
+        /* Success state */
+        .req-success {
+            display: none; text-align: center;
+            padding: 60px 20px;
+        }
+        .req-success.show { display: block; animation: fadeUp 0.5s ease; }
+        .req-success .success-icon { font-size: 48px; margin-bottom: 16px; }
+        .req-success h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px; font-weight: 300; color: var(--text);
+            margin-bottom: 10px;
+        }
+        .req-success p { font-size: 13px; color: var(--muted); }
+
+        /* Pre-selected architect card (from post reference) */
+        .arch-card.pre-selected {
+            border-color: var(--p-border) !important;
+            background: var(--p-dim) !important;
+            box-shadow: 0 0 0 1px var(--p-border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .req-header { padding: 16px 20px; }
+            .req-hero { padding: 48px 20px 36px; }
+            .service-selector { padding: 28px 20px 0; flex-direction: column; }
+            .req-form-wrap { padding: 28px 20px; }
+            .fg-row, .fg-row-3, .budget-pair { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="app-page req-page">
+
+<!-- ── HEADER ── -->
+<header class="req-header">
+    <a href="Archmind.html" class="req-logo">ARCH<span>MIND</span></a>
+    <nav class="req-nav">
+        <a href="design.html">Explore</a>
+        <a href="#" class="active">Post a Request</a>
+        <a href="profile.html">My Profile</a>
+    </nav>
+</header>
+
+<!-- ── HERO STRIP ── -->
+<div class="req-hero">
+    <div class="req-eyebrow">Client Services</div>
+    <h1>Request a Service</h1>
+    <p>Tell us what you need. We'll match you with the right expert for the job.</p>
+</div>
+
+<!-- ── SERVICE TYPE SELECTOR ── -->
+<div class="service-selector">
+
+    <div class="svc-tab active" onclick="switchService('design')" id="tab-design">
+        <span class="svc-tab-badge">Selected</span>
+        <span class="svc-tab-icon">🏛️</span>
+        <div class="svc-tab-title">Building, Renovation &amp; Design</div>
+        <div class="svc-tab-desc">New construction, structural renovation, interior design, and architectural planning projects.</div>
+    </div>
+
+    <div class="svc-tab" onclick="switchService('maintenance')" id="tab-maintenance">
+        <span class="svc-tab-badge">Selected</span>
+        <span class="svc-tab-icon">🔧</span>
+        <div class="svc-tab-title">Maintenance</div>
+        <div class="svc-tab-desc">Repairs, upkeep, inspections, and ongoing maintenance for existing structures and spaces.</div>
+    </div>
+
+</div>
+
+<!-- ── FORMS ── -->
+<div class="req-form-wrap">
+
+    <!-- ════════════════════════════════════════
+         PANEL 1 — Building / Renovation / Design
+         ════════════════════════════════════════ -->
+    <form id="panel-design" class="form-panel active" onsubmit="handleSubmit(event, 'design')">
+
+        <!-- 1. Project Basics -->
+        <div class="form-section-label">Project Basics</div>
+
+        <div class="fg">
+            <label>Project Title *</label>
+            <input type="text" placeholder="e.g., 3-Bedroom Eco-Villa, Modern Office Renovation" required>
+        </div>
+
+        <div class="fg">
+            <label>Service Type *</label>
+            <div class="pill-group">
+                <label class="pill-item"><input type="radio" name="d-type" value="new-construction" checked> New Construction</label>
+                <label class="pill-item"><input type="radio" name="d-type" value="renovation"> Renovation</label>
+                <label class="pill-item"><input type="radio" name="d-type" value="interior-design"> Interior Design</label>
+                <label class="pill-item"><input type="radio" name="d-type" value="landscape"> Landscape Design</label>
+            </div>
+        </div>
+
+        <div class="fg-row">
+            <div class="fg">
+                <label>Property Type *</label>
+                <select required>
+                    <option value="" disabled selected>Select property type</option>
+                    <option>Residential — House / Villa</option>
+                    <option>Residential — Apartment / Flat</option>
+                    <option>Commercial — Office</option>
+                    <option>Commercial — Retail / Shop</option>
+                    <option>Commercial — Restaurant / Cafe</option>
+                    <option>Industrial / Warehouse</option>
+                    <option>Institutional / Educational</option>
+                    <option>Mixed Use</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="fg">
+                <label>Project Location *</label>
+                <input type="text" placeholder="City, Area / Locality" required>
+            </div>
+        </div>
+
+        <div class="fg-row">
+            <div class="fg">
+                <label>Plot / Built-up Area</label>
+                <input type="text" placeholder="e.g., 2400 sq ft / 30×40 site">
+            </div>
+            <div class="fg">
+                <label>Number of Floors</label>
+                <select>
+                    <option value="" disabled selected>Select</option>
+                    <option>Ground Floor Only</option>
+                    <option>G + 1</option>
+                    <option>G + 2</option>
+                    <option>G + 3</option>
+                    <option>G + 4 or more</option>
+                    <option>Not decided yet</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 2. Scope & Requirements -->
+        <div class="form-section-label">Scope &amp; Requirements</div>
+
+        <div class="fg">
+            <label>Scope of Work *</label>
+            <textarea rows="4" placeholder="Describe what you need — rooms, spaces, structural changes, style preferences, special requirements..." required></textarea>
+        </div>
+
+        <div class="fg">
+            <label>Preferred Architectural Style</label>
+            <div class="pill-group">
+                <label class="check-pill"><input type="checkbox" name="d-style" value="modern"> Modern / Contemporary</label>
+                <label class="check-pill"><input type="checkbox" name="d-style" value="minimalist"> Minimalist</label>
+                <label class="check-pill"><input type="checkbox" name="d-style" value="traditional"> Traditional / Classic</label>
+                <label class="check-pill"><input type="checkbox" name="d-style" value="industrial"> Industrial</label>
+                <label class="check-pill"><input type="checkbox" name="d-style" value="sustainable"> Sustainable / Green</label>
+                <label class="check-pill"><input type="checkbox" name="d-style" value="open"> Open to Suggestions</label>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Deliverables Expected</label>
+            <div class="pill-group">
+                <label class="check-pill"><input type="checkbox" name="d-deliverable" value="2d"> 2D Floor Plans</label>
+                <label class="check-pill"><input type="checkbox" name="d-deliverable" value="3d"> 3D Renders / Walkthrough</label>
+                <label class="check-pill"><input type="checkbox" name="d-deliverable" value="structural"> Structural Drawings</label>
+                <label class="check-pill"><input type="checkbox" name="d-deliverable" value="mep"> MEP Drawings</label>
+                <label class="check-pill"><input type="checkbox" name="d-deliverable" value="permit"> Permit / Approval Drawings</label>
+                <label class="check-pill"><input type="checkbox" name="d-deliverable" value="supervision"> On-site Supervision</label>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Reference / Inspiration Images (Optional)</label>
+            <div class="file-zone">
+                <input type="file" accept="image/*" multiple>
+                <span class="file-zone-icon">🖼️</span>
+                <span class="file-zone-text">Upload Reference Images</span>
+                <span class="file-zone-sub">PNG, JPG, PDF — up to 10 files</span>
+            </div>
+        </div>
+
+        <!-- 3. Budget & Timeline -->
+        <div class="form-section-label">Budget &amp; Timeline</div>
+
+        <div class="fg">
+            <label>Estimated Budget Range (Rs.) *</label>
+            <div class="budget-pair">
+                <input type="number" placeholder="Minimum" min="0" required>
+                <input type="number" placeholder="Maximum" min="0" required>
+            </div>
+        </div>
+
+        <div class="fg-row">
+            <div class="fg">
+                <label>Budget Flexibility</label>
+                <select>
+                    <option>Fixed — Non-negotiable</option>
+                    <option>Slightly Flexible (±10%)</option>
+                    <option>Open to Negotiation</option>
+                    <option>To be discussed after proposal</option>
+                </select>
+            </div>
+            <div class="fg">
+                <label>Expected Start Date</label>
+                <input type="date">
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Project Timeline *</label>
+            <div class="pill-group">
+                <label class="pill-item"><input type="radio" name="d-time" value="urgent"> Urgent (&lt; 1 month)</label>
+                <label class="pill-item"><input type="radio" name="d-time" value="1-3" checked> 1 – 3 Months</label>
+                <label class="pill-item"><input type="radio" name="d-time" value="3-6"> 3 – 6 Months</label>
+                <label class="pill-item"><input type="radio" name="d-time" value="6+"> 6+ Months</label>
+                <label class="pill-item"><input type="radio" name="d-time" value="flexible"> Flexible</label>
+            </div>
+            <div class="urgency-note" id="d-urgency-note">
+                ⚡ Urgent requests may carry a priority fee. Architects will be notified immediately.
+            </div>
+        </div>
+
+        <!-- 4. Assign Architect -->
+        <div class="form-section-label">Assign To</div>
+
+        <div class="fg">
+            <label>Who should receive this request?</label>
+            <div class="pill-group" style="margin-bottom: 14px;">
+                <label class="pill-item"><input type="radio" name="d-target" value="all" checked onchange="togglePanel('d-arch-panel', false)"> Open to All Architects</label>
+                <label class="pill-item"><input type="radio" name="d-target" value="specific" onchange="loadSmartPros('design')"> Select Specific Architects</label>
+            </div>
+
+            <div id="d-arch-panel" class="arch-selector-wrap" style="display:none;">
+                <div class="smart-pro-header">
+                    <span class="smart-pro-label">✦ Matched by location &amp; expertise</span>
+                    <input type="text" class="arch-search" id="d-arch-search"
+                           placeholder="🔍 Filter by name or specialty…"
+                           oninput="filterSmartPros(this, 'd-arch-list')">
+                </div>
+                <div class="arch-list" id="d-arch-list">
+                    <p class="empty-text" style="padding:16px 0;">Select your project location above to see matched architects.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Additional Notes (Optional)</label>
+            <textarea rows="3" placeholder="Any other details, constraints, or preferences the architect should know…"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-req">Post Design Request →</button>
+    </form>
+
+
+    <!-- ════════════════════════════════════════
+         PANEL 2 — Maintenance
+         ════════════════════════════════════════ -->
+    <form id="panel-maintenance" class="form-panel" onsubmit="handleSubmit(event, 'maintenance')">
+
+        <!-- 1. Issue Details -->
+        <div class="form-section-label">Issue Details</div>
+
+        <div class="fg">
+            <label>Issue Title *</label>
+            <input type="text" placeholder="e.g., Roof Leak in Master Bedroom, Electrical Fault in Kitchen" required>
+        </div>
+
+        <div class="fg">
+            <label>Maintenance Category *</label>
+            <select required>
+                <option value="" disabled selected>Select category</option>
+                <option>Plumbing — Leaks, Pipes, Drainage</option>
+                <option>Electrical — Wiring, Faults, Fixtures</option>
+                <option>Civil — Cracks, Seepage, Structural</option>
+                <option>Waterproofing — Roof, Terrace, Basement</option>
+                <option>Painting &amp; Surface Finishing</option>
+                <option>Flooring — Tiles, Wood, Repair</option>
+                <option>Doors &amp; Windows — Repair / Replacement</option>
+                <option>HVAC — AC, Ventilation, Heating</option>
+                <option>False Ceiling / Gypsum Work</option>
+                <option>General Handyman / Miscellaneous</option>
+            </select>
+        </div>
+
+        <div class="fg-row">
+            <div class="fg">
+                <label>Property Type *</label>
+                <select required>
+                    <option value="" disabled selected>Select property type</option>
+                    <option>Residential — House / Villa</option>
+                    <option>Residential — Apartment / Flat</option>
+                    <option>Commercial — Office</option>
+                    <option>Commercial — Retail / Shop</option>
+                    <option>Industrial / Warehouse</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="fg">
+                <label>Property Location *</label>
+                <input type="text" placeholder="City, Area / Locality" required>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Affected Area / Room</label>
+            <input type="text" placeholder="e.g., Master Bedroom, Ground Floor Bathroom, Terrace">
+        </div>
+
+        <div class="fg">
+            <label>Issue Description *</label>
+            <textarea rows="4" placeholder="Describe the problem in detail — when it started, how severe it is, what you've already tried…" required></textarea>
+        </div>
+
+        <!-- 2. Severity & Access -->
+        <div class="form-section-label">Severity &amp; Access</div>
+
+        <div class="fg">
+            <label>Issue Severity *</label>
+            <div class="pill-group">
+                <label class="pill-item"><input type="radio" name="m-severity" value="minor" checked> Minor — Cosmetic / Low Impact</label>
+                <label class="pill-item"><input type="radio" name="m-severity" value="moderate"> Moderate — Needs Attention</label>
+                <label class="pill-item"><input type="radio" name="m-severity" value="critical"> Critical — Urgent / Safety Risk</label>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Site Access Available</label>
+            <div class="pill-group">
+                <label class="pill-item"><input type="radio" name="m-access" value="anytime" checked> Anytime</label>
+                <label class="pill-item"><input type="radio" name="m-access" value="weekdays"> Weekdays Only</label>
+                <label class="pill-item"><input type="radio" name="m-access" value="weekends"> Weekends Only</label>
+                <label class="pill-item"><input type="radio" name="m-access" value="scheduled"> By Appointment</label>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Upload Photos of the Issue (Recommended)</label>
+            <div class="file-zone">
+                <input type="file" accept="image/*" multiple>
+                <span class="file-zone-icon">📷</span>
+                <span class="file-zone-text">Upload Issue Photos</span>
+                <span class="file-zone-sub">Clear photos help experts assess the problem faster</span>
+            </div>
+        </div>
+
+        <!-- 3. Budget & Timeline -->
+        <div class="form-section-label">Budget &amp; Timeline</div>
+
+        <div class="fg">
+            <label>Estimated Budget (Rs.)</label>
+            <div class="budget-pair">
+                <input type="number" placeholder="Minimum" min="0">
+                <input type="number" placeholder="Maximum" min="0">
+            </div>
+        </div>
+
+        <div class="fg-row">
+            <div class="fg">
+                <label>Preferred Service Date</label>
+                <input type="date">
+            </div>
+            <div class="fg">
+                <label>Preferred Time Slot</label>
+                <select>
+                    <option value="" disabled selected>Select time slot</option>
+                    <option>Morning (8 AM – 12 PM)</option>
+                    <option>Afternoon (12 PM – 4 PM)</option>
+                    <option>Evening (4 PM – 7 PM)</option>
+                    <option>Flexible</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Urgency *</label>
+            <div class="pill-group">
+                <label class="pill-item"><input type="radio" name="m-time" value="emergency"> Emergency (Today / ASAP)</label>
+                <label class="pill-item"><input type="radio" name="m-time" value="within-week" checked> Within This Week</label>
+                <label class="pill-item"><input type="radio" name="m-time" value="within-month"> Within a Month</label>
+                <label class="pill-item"><input type="radio" name="m-time" value="flexible"> Flexible</label>
+            </div>
+            <div class="urgency-note" id="m-urgency-note">
+                🚨 Emergency requests are escalated immediately to available maintenance experts.
+            </div>
+        </div>
+
+        <!-- 4. Assign Expert -->
+        <div class="form-section-label">Assign To</div>
+
+        <div class="fg">
+            <label>Who should receive this request?</label>
+            <div class="pill-group" style="margin-bottom: 14px;">
+                <label class="pill-item"><input type="radio" name="m-target" value="all" checked onchange="togglePanel('m-expert-panel', false)"> Open to All Maintenance Experts</label>
+                <label class="pill-item"><input type="radio" name="m-target" value="specific" onchange="loadSmartPros('maintenance')"> Select a Specific Expert</label>
+            </div>
+
+            <div id="m-expert-panel" class="arch-selector-wrap" style="display:none;">
+                <div class="smart-pro-header">
+                    <span class="smart-pro-label">✦ Matched by location &amp; expertise</span>
+                    <input type="text" class="arch-search" id="m-expert-search"
+                           placeholder="🔍 Filter by name or specialty…"
+                           oninput="filterSmartPros(this, 'm-expert-list')">
+                </div>
+                <div class="arch-list" id="m-expert-list">
+                    <p class="empty-text" style="padding:16px 0;">Select your property location above to see matched experts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fg">
+            <label>Additional Notes (Optional)</label>
+            <textarea rows="3" placeholder="Any access instructions, special tools needed, or other details the expert should know…"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-req">Post Maintenance Request →</button>
+    </form>
+
+    <!-- Success message -->
+    <div class="req-success" id="req-success">
+        <div class="success-icon">✦</div>
+        <h2>Request Posted</h2>
+        <p>Your request has been submitted. Experts will reach out with proposals shortly.</p>
+        <a href="profile.html" style="display:inline-block;margin-top:24px;padding:12px 32px;border-radius:8px;background:var(--p-dim);border:0.5px solid var(--p-border);color:var(--p);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;">
+            View My Dashboard →
+        </a>
+    </div>
+
+</div><!-- /.req-form-wrap -->
+
+<script src="archmind.js"></script>
+<script>
+    /* ── Service tab switcher ── */
+    function switchService(type) {
+        document.getElementById('tab-design').classList.toggle('active', type === 'design');
+        document.getElementById('tab-maintenance').classList.toggle('active', type === 'maintenance');
+        document.getElementById('panel-design').classList.toggle('active', type === 'design');
+        document.getElementById('panel-maintenance').classList.toggle('active', type === 'maintenance');
+    }
+
+    /* ── Show / hide sub-panels ── */
+    function togglePanel(id, show) {
+        document.getElementById(id).style.display = show ? 'block' : 'none';
+    }
+
+    /* ── SMART PRO LOADER ──────────────────────────────────────────────────
+       Reads the DB, filters by:
+         1. Role match  (design → designer/architect | maintenance → maintenance)
+         2. Location match — pro's location/workRegistry.locations contains
+            any word from the request location field (case-insensitive)
+         3. Expertise match — for maintenance: pro's specialisation / workRegistry.services
+            contains a keyword from the selected category
+       Sorts: location+expertise match first, then location-only, then rest.
+       Falls back to showing all matching-role pros if no location entered yet.
+    ─────────────────────────────────────────────────────────────────────── */
+    function loadSmartPros(serviceType) {
+        const panelId  = serviceType === 'design' ? 'd-arch-panel'  : 'm-expert-panel';
+        const listId   = serviceType === 'design' ? 'd-arch-list'   : 'm-expert-list';
+        const inputName= serviceType === 'design' ? 'd-arch'        : 'm-expert';
+
+        document.getElementById(panelId).style.display = 'block';
+
+        // Get location from the relevant location input
+        const locInput = serviceType === 'design'
+            ? document.querySelector('#panel-design input[placeholder="City, Area / Locality"]')
+            : document.querySelector('#panel-maintenance input[placeholder="City, Area / Locality"]');
+        const locationQuery = (locInput?.value || '').trim().toLowerCase();
+
+        // Get expertise hint from category/service-type selection
+        let expertiseHint = '';
+        if (serviceType === 'maintenance') {
+            const catSel = document.querySelector('#panel-maintenance select[required]');
+            expertiseHint = (catSel?.value || '').toLowerCase();
+        } else {
+            const subType = document.querySelector('input[name="d-type"]:checked')?.value || '';
+            expertiseHint = subType.replace(/-/g, ' ').toLowerCase();
+        }
+
+        const db = JSON.parse(localStorage.getItem('archmind_db_v5') || '[]');
+        const currentEmail = JSON.parse(localStorage.getItem('archmind_session') || 'null')?.email;
+
+        // Filter by role
+        const roleMatch = serviceType === 'design'
+            ? u => u.role === 'designer' || u.role === 'architect'
+            : u => u.role === 'maintenance';
+
+        let pros = db.filter(u => roleMatch(u) && u.email !== currentEmail);
+
+        // Score each pro
+        pros = pros.map(u => {
+            let score = 0;
+
+            // Location match
+            if (locationQuery) {
+                const locWords = locationQuery.split(/[\s,]+/).filter(Boolean);
+                const proLocs  = [
+                    (u.location || '').toLowerCase(),
+                    ...(u.workRegistry?.locations || []).map(l => l.toLowerCase())
+                ].join(' ');
+                const locHit = locWords.some(w => proLocs.includes(w));
+                if (locHit) score += 10;
+            }
+
+            // Expertise match
+            if (expertiseHint) {
+                const proSpec = [
+                    (u.specialisation || '').toLowerCase(),
+                    (u.bio || '').toLowerCase(),
+                    ...(u.workRegistry?.services || []).map(s => s.toLowerCase())
+                ].join(' ');
+                const expWords = expertiseHint.split(/[\s\-\/]+/).filter(w => w.length > 2);
+                const expHit   = expWords.some(w => proSpec.includes(w));
+                if (expHit) score += 5;
+            }
+
+            // Rating bonus
+            score += (u.avgRating || 0);
+
+            return { ...u, _score: score };
+        });
+
+        // Sort: highest score first
+        pros.sort((a, b) => b._score - a._score);
+
+        const list = document.getElementById(listId);
+
+        if (pros.length === 0) {
+            list.innerHTML = `<p class="empty-text" style="padding:16px 0;">
+                No registered professionals found yet.
+                <a href="Archmind.html" style="color:var(--p);">Browse all</a>
+            </p>`;
+            return;
+        }
+
+        list.innerHTML = pros.map(u => {
+            const stars   = u.avgRating
+                ? `<span class="smart-pro-stars">${'★'.repeat(Math.round(u.avgRating))}${'☆'.repeat(5 - Math.round(u.avgRating))}</span> <span class="smart-pro-rating">${u.avgRating}</span>`
+                : '';
+            const locTag  = u.location
+                ? `<span class="smart-pro-tag">📍 ${u.location}</span>`
+                : '';
+            const specTag = (u.specialisation || (u.workRegistry?.services || []).join(', '))
+                ? `<span class="smart-pro-tag">🔧 ${u.specialisation || u.workRegistry.services.slice(0,2).join(', ')}</span>`
+                : '';
+            const matchBadge = u._score >= 10
+                ? `<span class="smart-match-badge">✦ Best Match</span>`
+                : u._score >= 5
+                    ? `<span class="smart-match-badge" style="background:rgba(56,189,248,0.12);color:#38bdf8;border-color:rgba(56,189,248,0.3);">Near You</span>`
+                    : '';
+            const jobCount = u.posts?.length
+                ? `· ${u.posts.length} project${u.posts.length !== 1 ? 's' : ''}`
+                : '';
+
+            return `
+            <label class="arch-card smart-pro-card">
+                <input type="checkbox" name="${inputName}" value="${u.email}">
+                <img src="${u.photo}" alt="${u.username}" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(u.username)}'">
+                <div class="smart-pro-info">
+                    <div class="smart-pro-top">
+                        <span class="arch-name">${u.username}</span>
+                        ${matchBadge}
+                    </div>
+                    <div class="smart-pro-tags">
+                        ${locTag}${specTag}
+                        ${jobCount ? `<span class="smart-pro-tag">📁 ${jobCount}</span>` : ''}
+                    </div>
+                    ${stars ? `<div class="smart-pro-rating-row">${stars}</div>` : ''}
+                </div>
+            </label>`;
+        }).join('');
+    }
+
+    /* ── Live filter on the smart list ── */
+    function filterSmartPros(input, listId) {
+        const q = input.value.toLowerCase();
+        document.querySelectorAll(`#${listId} .arch-card`).forEach(card => {
+            card.style.display = card.innerText.toLowerCase().includes(q) ? 'flex' : 'none';
+        });
+    }
+
+    /* ── Urgency note toggle ── */
+    document.querySelectorAll('input[name="d-time"]').forEach(r => {
+        r.addEventListener('change', () => {
+            document.getElementById('d-urgency-note').classList.toggle('show', r.value === 'urgent' && r.checked);
+        });
+    });
+    document.querySelectorAll('input[name="m-time"]').forEach(r => {
+        r.addEventListener('change', () => {
+            document.getElementById('m-urgency-note').classList.toggle('show', r.value === 'emergency' && r.checked);
+        });
+    });
+
+    /* ── Re-run smart loader when location field changes ── */
+    document.querySelector('#panel-design input[placeholder="City, Area / Locality"]')
+        ?.addEventListener('input', () => {
+            if (document.querySelector('input[name="d-target"][value="specific"]')?.checked) {
+                loadSmartPros('design');
+            }
+        });
+    document.querySelector('#panel-maintenance input[placeholder="City, Area / Locality"]')
+        ?.addEventListener('input', () => {
+            if (document.querySelector('input[name="m-target"][value="specific"]')?.checked) {
+                loadSmartPros('maintenance');
+            }
+        });
+
+    /* ── PRE-FILL FROM POST REFERENCE ──────────────────────────────────────
+       When arriving from a "Send Request" button on a post card, the URL
+       carries: toEmail, toName, postId, postTitle, postImg, postType
+       We use these to:
+         1. Show a "Requesting about" banner with the post image + title
+         2. Pre-fill the project title field
+         3. Switch to the correct service panel (maintenance vs design)
+         4. Auto-select "Specific Architect" and pre-check that architect
+    ─────────────────────────────────────────────────────────────────────── */
+    (function prefillFromPost() {
+        const p         = new URLSearchParams(window.location.search);
+        const toEmail   = p.get('toEmail')   ? decodeURIComponent(p.get('toEmail'))   : null;
+        const toName    = p.get('toName')    ? decodeURIComponent(p.get('toName'))    : null;
+        const postTitle = p.get('postTitle') ? decodeURIComponent(p.get('postTitle')) : null;
+        const postImg   = p.get('postImg')   ? decodeURIComponent(p.get('postImg'))   : null;
+        const postType  = p.get('postType')  ? decodeURIComponent(p.get('postType'))  : null;
+
+        if (!toEmail && !postTitle) return; // nothing to prefill
+
+        // ── Determine which panel to activate ──
+        // postType is the subType from the post (e.g. 'living-modern', 'plumbing', etc.)
+        // maintenance posts come from maintenance-role users
+        const db   = JSON.parse(localStorage.getItem('archmind_db_v5') || '[]');
+        const pro  = db.find(u => u.email === toEmail);
+        const isMaintenance = pro?.role === 'maintenance';
+        const activePanel   = isMaintenance ? 'maintenance' : 'design';
+
+        // Switch to the right panel
+        switchService(activePanel);
+
+        // ── Show "Requesting about" banner ──
+        if (postTitle || postImg) {
+            const formWrap = document.querySelector('.req-form-wrap');
+            const banner   = document.createElement('div');
+            banner.id      = 'post-ref-banner';
+            banner.style.cssText = `
+                display:flex; align-items:center; gap:16px;
+                background:rgba(198,167,228,0.07);
+                border:0.5px solid var(--p-border);
+                border-radius:12px; padding:14px 18px;
+                margin-bottom:24px; animation:fadeUp 0.4s ease;
+            `;
+            banner.innerHTML = `
+                ${postImg ? `<img src="${postImg}" alt="${postTitle || ''}"
+                    style="width:64px;height:64px;object-fit:cover;border-radius:8px;
+                           border:0.5px solid var(--border);flex-shrink:0;">` : ''}
+                <div style="flex:1;min-width:0;">
+                    <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;
+                                color:var(--p);margin-bottom:4px;">Requesting about</div>
+                    <div style="font-family:'Cormorant Garamond',serif;font-size:18px;
+                                font-weight:400;color:var(--text);
+                                white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                        ${postTitle || 'This post'}
+                    </div>
+                    ${toName ? `<div style="font-size:11px;color:var(--muted);margin-top:3px;">
+                        by ${toName}
+                    </div>` : ''}
+                </div>
+                <button onclick="document.getElementById('post-ref-banner').remove()"
+                        style="background:none;border:none;color:var(--muted);
+                               cursor:pointer;font-size:18px;padding:4px;flex-shrink:0;"
+                        aria-label="Dismiss">✕</button>
+            `;
+            // Insert before the active form panel
+            const activeForm = document.getElementById('panel-' + activePanel);
+            if (activeForm) formWrap.insertBefore(banner, activeForm);
+        }
+
+        // ── Pre-fill the title field ──
+        if (postTitle) {
+            const titleInput = document.querySelector(`#panel-${activePanel} input[type="text"]`);
+            if (titleInput && !titleInput.value) titleInput.value = postTitle;
+        }
+
+        // ── Pre-select the architect / expert ──
+        if (toEmail) {
+            // Switch the "Assign To" radio to "specific"
+            const specificRadio = document.querySelector(
+                `#panel-${activePanel} input[name="${activePanel === 'design' ? 'd-target' : 'm-target'}"][value="specific"]`
+            );
+            if (specificRadio) {
+                specificRadio.checked = true;
+                // Load the smart pro list, then after it renders, check the right card
+                loadSmartPros(activePanel);
+                // Give the DOM a tick to render, then check the matching card
+                setTimeout(() => {
+                    const inputName = activePanel === 'design' ? 'd-arch' : 'm-expert';
+                    const checkbox  = document.querySelector(
+                        `input[name="${inputName}"][value="${toEmail}"]`
+                    );
+                    if (checkbox) {
+                        checkbox.checked = true;
+                        // Visually highlight the card
+                        checkbox.closest('.arch-card')?.classList.add('pre-selected');
+                        checkbox.closest('.arch-card')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 300);
+            }
+        }
+    })();
+
+    /* ── Form submit handler ── */
+    function handleSubmit(e, type) {
+        e.preventDefault();
+        const user = JSON.parse(localStorage.getItem('archmind_session') || 'null');
+        if (!user) { window.location.href = 'login.html'; return; }
+
+        const form = e.target;
+
+        // Collect shared fields
+        const params = new URLSearchParams(window.location.search);
+        const targetEmailFromUrl = params.get('toEmail') ? decodeURIComponent(params.get('toEmail')) : null;
+        const targetNameFromUrl  = params.get('toName')  ? decodeURIComponent(params.get('toName'))  : null;
+
+        let formData = { serviceType: type };
+
+        if (type === 'design') {
+            formData.title        = form.querySelector('input[type="text"]').value.trim();
+            formData.details      = form.querySelector('textarea').value.trim();
+            formData.location     = form.querySelector('input[placeholder="City, Area / Locality"]')?.value.trim() || '';
+            formData.propertyType = form.querySelector('select')?.value || '';
+            formData.budgetMin    = form.querySelector('input[placeholder="Minimum"]')?.value || 0;
+            formData.budgetMax    = form.querySelector('input[placeholder="Maximum"]')?.value || 0;
+            formData.timeline     = form.querySelector('input[name="d-time"]:checked')?.value || 'flexible';
+            const styles       = [...form.querySelectorAll('input[name="d-style"]:checked')].map(i => i.value);
+            const deliverables = [...form.querySelectorAll('input[name="d-deliverable"]:checked')].map(i => i.value);
+            formData.extras = { styles, deliverables,
+                serviceSubType: form.querySelector('input[name="d-type"]:checked')?.value || '' };
+
+            // Specific target(s) — can be multiple checkboxes
+            const isSpecific = form.querySelector('input[name="d-target"][value="specific"]')?.checked;
+            if (isSpecific) {
+                const checked = [...form.querySelectorAll('input[name="d-arch"]:checked')].map(i => i.value);
+                formData.targetEmails = checked.length ? checked : null;
+                // For single-target compat with existing workflow
+                if (checked.length === 1) {
+                    const db  = JSON.parse(localStorage.getItem('archmind_db_v5') || '[]');
+                    const pro = db.find(u => u.email === checked[0]);
+                    formData.targetEmail = checked[0];
+                    formData.targetName  = pro?.username || '';
+                }
+            } else {
+                formData.targetEmail  = targetEmailFromUrl;
+                formData.targetName   = targetNameFromUrl;
+                formData.targetEmails = null;
+            }
+
+        } else {
+            formData.title        = form.querySelector('input[type="text"]').value.trim();
+            formData.details      = form.querySelector('textarea').value.trim();
+            formData.location     = form.querySelector('input[placeholder="City, Area / Locality"]')?.value.trim() || '';
+            formData.propertyType = form.querySelector('select')?.value || '';
+            formData.budgetMin    = form.querySelector('input[placeholder="Minimum"]')?.value || 0;
+            formData.budgetMax    = form.querySelector('input[placeholder="Maximum"]')?.value || 0;
+            formData.timeline     = form.querySelector('input[name="m-time"]:checked')?.value || 'flexible';
+            formData.extras = {
+                category: form.querySelector('select')?.value || '',
+                severity: form.querySelector('input[name="m-severity"]:checked')?.value || 'minor',
+                access:   form.querySelector('input[name="m-access"]:checked')?.value || 'anytime',
+            };
+
+            const isSpecific = form.querySelector('input[name="m-target"][value="specific"]')?.checked;
+            if (isSpecific) {
+                const checked = [...form.querySelectorAll('input[name="m-expert"]:checked')].map(i => i.value);
+                formData.targetEmails = checked.length ? checked : null;
+                if (checked.length === 1) {
+                    const db  = JSON.parse(localStorage.getItem('archmind_db_v5') || '[]');
+                    const pro = db.find(u => u.email === checked[0]);
+                    formData.targetEmail = checked[0];
+                    formData.targetName  = pro?.username || '';
+                }
+            } else {
+                formData.targetEmail  = targetEmailFromUrl;
+                formData.targetName   = targetNameFromUrl;
+                formData.targetEmails = null;
+            }
+        }
+
+        if (!formData.title) { alert('Please enter a title.'); return; }
+
+        // If multiple specific targets selected, post one request per target
+        if (formData.targetEmails && formData.targetEmails.length > 1) {
+            const db = JSON.parse(localStorage.getItem('archmind_db_v5') || '[]');
+            formData.targetEmails.forEach(email => {
+                const pro = db.find(u => u.email === email);
+                postServiceRequest({ ...formData, targetEmail: email, targetName: pro?.username || email, targetEmails: null });
+            });
+        } else {
+            postServiceRequest(formData);
+        }
+
+        // Show success
+        document.getElementById('panel-' + type).style.display = 'none';
+        document.querySelector('.service-selector').style.display = 'none';
+        document.getElementById('req-success').classList.add('show');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

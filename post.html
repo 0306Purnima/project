@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchMind | Post Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="archmind.css">
+</head>
+<body class="app-page">
+
+<header class="post-page-header">
+    <div class="header-logo">ARCHMIND</div>
+    <nav>
+        <a href="Archmind.html">Home</a>
+        <a href="profile.html">My Profile</a>
+    </nav>
+</header>
+
+<div class="post-page-container">
+    <h2>Post Your Work</h2>
+    <p class="subtitle">Share a project to attract clients and grow your portfolio.</p>
+
+    <form id="post-form">
+
+        <!-- Title -->
+        <div class="form-group">
+            <label for="title">Project Title *</label>
+            <input type="text" id="title" placeholder="e.g., Modern 3BHK Interior, Eco Villa Design" required>
+        </div>
+
+        <!-- Project Type -->
+        <div class="form-group">
+            <label>Project Type *</label>
+            <div class="type-group">
+                <label class="sel-type">
+                    <input type="radio" name="type" value="design"> Design
+                </label>
+                <label class="sel-type">
+                    <input type="radio" name="type" value="interior"> Interior
+                </label>
+                <label class="sel-type">
+                    <input type="radio" name="type" value="planning"> Planning
+                </label>
+            </div>
+        </div>
+
+        <!-- Sub-category -->
+        <div class="form-group">
+            <label>Sub-category *</label>
+            <input type="text" list="design-options"   placeholder="Design style (e.g. living-modern)" disabled style="opacity:0.35;">
+            <datalist id="design-options">
+                <option value="living-modern">
+                <option value="living-luxury">
+                <option value="living-minimal">
+                <option value="bed-modern">
+                <option value="bed-cozy">
+                <option value="bed-luxury">
+                <option value="kit-modern">
+                <option value="kit-classic">
+                <option value="kit-minimal">
+                <option value="din-modern">
+                <option value="din-elegant">
+                <option value="din-luxury">
+                <option value="bath-modern">
+                <option value="bath-classic">
+                <option value="bath-luxury">
+            </datalist>
+            <input type="text" list="interior-options" placeholder="Interior category (e.g. walls-modern)" disabled style="opacity:0.35;margin-top:8px;">
+            <datalist id="interior-options">
+                <option value="walls-modern">
+                <option value="walls-texture">
+                <option value="walls-artistic">
+                <option value="furniture-modern">
+                <option value="furniture-vintage">
+                <option value="furniture-eclectic">
+                <option value="lighting-ambient">
+                <option value="lighting-luxury">
+                <option value="lighting-smart">
+                <option value="decor-minimal">
+                <option value="decor-boho">
+                <option value="decor-classic">
+                <option value="ceiling-modern">
+                <option value="ceiling-luxury">
+                <option value="ceiling-textured">
+            </datalist>
+            <input type="text" list="planning-options" placeholder="Planning size (e.g. modern-1)" disabled style="opacity:0.35;margin-top:8px;">
+            <datalist id="planning-options">
+                <option value="modern-1">
+                <option value="modern-2">
+                <option value="med-1">
+                <option value="med-2">
+                <option value="sustain-1">
+                <option value="sustain-2">
+                <option value="med-mod-1">
+                <option value="med-mod-2">
+                <option value="med-mod-3">
+                <option value="med-medi-1">
+                <option value="med-medi-2">
+                <option value="med-medi-3">
+                <option value="med-sus-1">
+                <option value="med-sus-2">
+                <option value="med-sus-3">
+                <option value="l-mod-1">
+                <option value="l-mod-2">
+                <option value="l-mod-3">
+                <option value="l-med-1">
+                <option value="l-med-2">
+                <option value="l-med-3">
+                <option value="l-sus-1">
+                <option value="l-sus-2">
+                <option value="l-sus-3">
+            </datalist>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="post-desc">Description</label>
+            <textarea id="post-desc" rows="4" placeholder="Describe the project — materials, style, key features…"></textarea>
+        </div>
+
+        <!-- Budget -->
+        <div class="form-group">
+            <label for="post-budget">Budget Range</label>
+            <input type="text" id="post-budget" placeholder="e.g., Rs.50,000 – Rs.1,20,000">
+        </div>
+
+        <!-- Image Upload -->
+        <div class="form-group">
+            <label>Project Image</label>
+            <div class="file-zone">
+                <input type="file" id="file-input" accept="image/*" onchange="previewPostImages(event)">
+                <div class="upload-icon">🖼️</div>
+                <p>Click to upload or drag an image here</p>
+                <p style="font-size:11px;opacity:0.5;">PNG, JPG — max 2 MB</p>
+            </div>
+            <div id="imagePreviewStrip"></div>
+        </div>
+
+        <button type="submit" class="btn-submit">Publish Project →</button>
+    </form>
+</div>
+
+<script src="archmind.js"></script>
+</body>
+</html>
